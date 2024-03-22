@@ -159,3 +159,36 @@ Visualizar a avaliação física feita na academia.
 | Campo                    | Descrição                                                                              |
 |--------------------------|----------------------------------------------------------------------------------------|
 | Acessar documento (.pdf) | Permite ao usuário ter acesso/visualizar o arquivo .pdf contendo sua avaliação física. |
+
+---
+
+# R04: - Visualizar ficha de treino
+
+### Autor: @httpablo - Pablo Pereira Brito
+
+### Revisor: @danmaciel23 - Danilo Oliveira Maciel
+
+| Item            | Descrição                                                                                                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Caso de uso     | Visualizar ficha de treino.                                                                                                                                                                                                  |
+| Resumo          | Este caso de uso permite que o usuário visualize a ficha de treino previamente cadastrada no sistema da academia. O usuário pode acessar informação detalhada sobre o exercício e quaisquer outras instruções relevantes para a realização dos treinos.                                                          |
+| Ator principal | Usuário da academia.                                                                                                                                                                                                                                                                                                       |
+| Pré-condição    | O usuário devem estar logados no sistema e ter acesso a tela inicial.                                                                                                                       |
+| Pós-condição    | O usuário visualiza as informações detalhadas da ficha de treino.
+
+## Descrição Sucinta:
+
+O usuário pode acessar a ficha de treino previamente cadastrada no sistema.
+
+## Fluxo Principal:
+
+1. O usuário faz login;
+2. O sistema exibe a tela inicial com o menu de opções;
+3. O usuário seleciona a opção “Treinos”;
+4. O sistema exibe a tela com a ficha de treino;
+
+## Opções dos Usuários:
+
+| Campo                                   | Descrição | 
+| --------------------------------------- | ----------- | 
+|Acessar documento (.pdf)                             | Permite o usuário visualizar o arquivo em .pdf.       | 
