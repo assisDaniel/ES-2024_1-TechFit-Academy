@@ -131,3 +131,31 @@ Realizar login do usuário na plataforma (TechFit Academy).
 
 1. O ator ainda não possui uma conta no sistema.
 2. O ator clica no botão "Criar uma conta" e é redirecionado para a página de cadastro.
+
+---
+# **R03 - Visualizar avaliação física**
+### Autor: @assisDaniel - Daniel Barbosa de Assis Costa
+### Revisor: @httpablo - Pablo Pereira Brito
+
+| Item           | Descrição                                                                               |
+|----------------|-----------------------------------------------------------------------------------------|
+| Caso de uso    | Visualizar sua avaliação física.                                                        |
+| Resumo         | Quando nesta página o usuário consegue ter acesso a avaliação física feita na academia. |
+| Ator principal | Usuário interessado em visualizar sua avaliação física.                                 |
+| Pré-condição   | Estar cadastrado no sistema e logado na plataforma.                                     |
+| Pós-condição   | Visualizou a avaliação física.                                                          |
+
+## Descrição sucinta
+Visualizar a avaliação física feita na academia.
+
+## Fluxo principal
+
+1. O usuário realiza o login.
+2. Usuário é redirecionado para a página principal.
+3. O usuário clica em "Avaliação física".
+4. Usuário é redirecionado para a página com o documento requisitado.
+
+## Opções do usuário
+| Campo                    | Descrição                                                                              |
+|--------------------------|----------------------------------------------------------------------------------------|
+| Acessar documento (.pdf) | Permite ao usuário ter acesso/visualizar o arquivo .pdf contendo sua avaliação física. |
