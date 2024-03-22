@@ -201,7 +201,7 @@ O usuário pode acessar a ficha de treino previamente cadastrada no sistema.
 
 ### Autor: @danmaciel23 - Danilo Oliveira Maciel.
 ---
-### Revisor: @assisDaniel - Daniel Barbosa de Assis Costa
+### Revisor: @tarcisof - Tarciso Filho de Miranda Dias
 
 
 
