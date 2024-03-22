@@ -192,3 +192,44 @@ O usuário pode acessar a ficha de treino previamente cadastrada no sistema.
 | Campo                                   | Descrição | 
 | --------------------------------------- | ----------- | 
 |Acessar documento (.pdf)                             | Permite o usuário visualizar o arquivo em .pdf.       | 
+
+---
+
+## TechFit - Academy
+
+## **R05 -  Acessar informações da academia**
+
+### Autor: @danmaciel23 - Danilo Oliveira Maciel.
+---
+### Revisor: @assisDaniel - Daniel Barbosa de Assis Costa
+
+
+
+
+| Item            | Descrição                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------- |
+|  Caso de uso    | Acessar informações                                                                                                   |
+|  Resumo         | Este documento descreve os requisitos para o sistema de acesso às informações da academia. O sistema permite que os 
+usuários acessem várias informações relacionadas à academia, como horários de funcionamento, informações do instrutor e planos disponíveis|
+|  Ator principal | usuário                                                                                                               |
+|  Pré-condição   | O usuário está autenticado no sistema                                                                                 |
+|  Pós-condição   | O usuário obteve informações detalhadas sobre os horários de funcionamento, informações de instrutor e planos         |
+
+## Descrição Sucinta:
+
+Acessar as informações básicas da academia: horários de funcionamento, horários dos personais e planos
+
+
+## Fluxo principal
+
+ 1 - Após efetuar o login <br>
+ 2 - Na página principal RF03: O usuário acessa a opção: "Horários e planos"<br>
+ 3 - O usuário visualiza detalhes adicionais dos horários da academia, horários dos instrutores e planos.<br>
+ 4 - Usuário clica no botão “Entre em Contato”<br>
+ 5 - Usuário é direcionado para Whatsapp de contato da academia<br>
+
+## opções do usuário 
+
+|  Campos                               | Descrição                                                                        |
+|---------------------------------------|----------------------------------------------------------------------------------|
+|  Botão: "Entre em contato"            | direciona para Whatsapp                                                          |
