@@ -80,3 +80,54 @@ Aqui está o texto sem a tabela:
 ## Fluxo alternativo
 1. O ator já possui uma conta no sistema.
 2. O ator clica no botão "Já tenho uma conta. Fazer Login." e é redirecionado para tela de Login.
+
+---
+# **R02 - Fazer login do usuário**
+### Autor: @assisDaniel - Daniel Barbosa de Assis Costa
+### Revisor: @httpablo - Pablo Pereira Brito
+
+| Item           | Descrição                                                                                                                                                      |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Caso de uso    | Login.                                                                                                                                                         |
+| Resumo         | Permitir que o usuário faça login na plataforma, desde que o mesmo tenha cadastro prévio. Caso o usuário não tenha conta, redirecioná-lo a página de cadastro. |
+| Ator principal | Usuário interessado em entrar na plataforma.                                                                                                                   |
+| Pré-condição   | Usuário estar conectado à internet.                                                                                                                            |
+| Pós-condição   | Usuário ter feito seu cadastro.                                                                                                                                |
+
+## Descrição sucinta
+Realizar login do usuário na plataforma (TechFit Academy).
+
+## Fluxo principal
+
+1. O usuário acessa o sistema de TechFit Academy e é apresentada a tela inicial.
+2. Na tela inicial, o usuário clica no botão "Login".
+3. Exibe um formulário de login com campos para o usuário preencher com seus dados.
+4. Após preencher o formulário, clicar no botão "Confirmar".
+5. Sistema verifica os dados fornecidos pelo usuário.
+   - Se correto, ele é direcionado para a página principal da plataforma.
+   - Se estiver incorreto, irá retornar mensagens de erro no formulário.
+
+## Campos do formulário de login
+| Campo | Obrigatório? | Editável? | Formato      |
+|-------|--------------|-----------|--------------|
+| CPF   | Sim          | Não       | texto        |
+| Senha | Sim          | Sim       | Alfanumérico |
+
+## Opções do usuário
+
+| Campo                          | Descrição                                                    | 
+|--------------------------------|--------------------------------------------------------------|
+| Login na plataforma            | Permite ao usuário entrar na página principal.               |
+| Verificar os dados preenchidos | Permite ao usuário revisar os dados inseridos no formulário. |
+
+
+## Relatório do usuário
+| Campo                                      | Descrição                                                      | Formato |
+|--------------------------------------------|----------------------------------------------------------------|---------|
+| "Logado com sucesso!"                      | Assegura ao usuário que ele conseguiu realizar o login.        | Texto   |
+| "CPF ou senha inválidos! Tente novamente." | Mostra ao usuário que algo inserido no formulário está errado. | Texto   |
+
+## Fluxo alternativo
+
+1. O ator ainda não possui uma conta no sistema.
+2. O ator clica no botão "Criar uma conta" e é redirecionado para a página de cadastro.
