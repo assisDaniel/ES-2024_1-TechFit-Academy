@@ -195,25 +195,18 @@ O usuário pode acessar a ficha de treino previamente cadastrada no sistema.
 
 ---
 
-## TechFit - Academy
-
 ## **R05 -  Acessar informações da academia**
 
 ### Autor: @danmaciel23 - Danilo Oliveira Maciel.
----
 ### Revisor: @tarcisof - Tarciso Filho de Miranda Dias
 
-
-
-
-| Item            | Descrição                                                                                                             |
-| --------------- | --------------------------------------------------------------------------------------------------------------------- |
-|  Caso de uso    | Acessar informações                                                                                                   |
-|  Resumo         | Este documento descreve os requisitos para o sistema de acesso às informações da academia. O sistema permite que os 
-usuários acessem várias informações relacionadas à academia, como horários de funcionamento, informações do instrutor e planos disponíveis|
-|  Ator principal | usuário                                                                                                               |
-|  Pré-condição   | O usuário está autenticado no sistema                                                                                 |
-|  Pós-condição   | O usuário obteve informações detalhadas sobre os horários de funcionamento, informações de instrutor e planos         |
+| Item            | Descrição                                                                                                                                                                                                                                                      |
+| --------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  Caso de uso    | Acessar informações                                                                                                                                                                                                                                            |
+|  Resumo         | Este documento descreve os requisitos para o sistema de acesso às informações da academia. O sistema permite que os usuários acessem várias informações relacionadas à academia, como horários de funcionamento, informações do instrutor e planos disponíveis |
+|  Ator principal | usuário                                                                                                                                                                                                                                                        |
+|  Pré-condição   | O usuário está autenticado no sistema                                                                                                                                                                                                                          |
+|  Pós-condição   | O usuário obteve informações detalhadas sobre os horários de funcionamento, informações de instrutor e planos                                                                                                                                                  |
 
 ## Descrição Sucinta:
 
@@ -228,7 +221,7 @@ Acessar as informações básicas da academia: horários de funcionamento, horá
  4 - Usuário clica no botão “Entre em Contato”<br>
  5 - Usuário é direcionado para Whatsapp de contato da academia<br>
 
-## opções do usuário 
+## Opções do usuário 
 
 |  Campos                               | Descrição                                                                        |
 |---------------------------------------|----------------------------------------------------------------------------------|
