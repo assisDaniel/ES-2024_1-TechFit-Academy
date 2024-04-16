@@ -41,7 +41,8 @@ include "header.php";
                 <td><?php echo $row['nome']?></td>
                 <td><?php echo $row['cpf']?></td>
                 <td>
-                    <a href="update.php?id=<?php echo $row["id"] ?>"><img src="icons/file-pen-solid.svg" width="25px"></a>
+                    <a href="update.php?id=<?php echo $row['id'] ?>"><img src="icons/file-pen-solid.svg" width="25px"></a>
+                    <a href="delete.php?id=<?php echo $row['id'] ?>"><img src="icons/trash-solid.svg" width="25px"></a>
                 </td>
             </tr>
             <?php
