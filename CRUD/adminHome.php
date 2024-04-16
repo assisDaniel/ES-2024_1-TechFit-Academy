@@ -40,7 +40,9 @@ include "header.php";
             <tr>
                 <td><?php echo $row['nome']?></td>
                 <td><?php echo $row['cpf']?></td>
-                <td> </td>
+                <td>
+                    <a href="update.php?id=<?php echo $row["id"] ?>"><img src="icons/file-pen-solid.svg" width="25px"></a>
+                </td>
             </tr>
             <?php
         }
