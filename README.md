@@ -15,7 +15,21 @@
 O projeto "TechFit Academy" visa disponibilizar aos usuários acesso aos serviços online da academia. Tendo em vista uma forma de facilitar o acesso aos serviços disponíveis na academia, o projeto disponibiliza acesso básico aos serviços, dentro os quais estão: Visualizar avaliações físicas, visualizar fichas de treinos e acesso a informações
 
 ---
+## 1ª Iteração - (03/04/2024 - 16/04/2024)
 
+Nesta primeira iteração, temos como objetivo dar o primeiro passo no projeto. Desse modo, faremos a 'Tela home' da forma como foi esboçada no event storming. Entretanto, como o objetivo dessa atividade é construir a parte de valor do projeto, tomaremos como se já tivesse sido feita a parte de autenticação, ou seja, poderemos fazer um cadastro diretamente pelo banco de dados mas pularemos a autenticação.
+
+- Se for superuser(admin):
+  - Tela home com operação create para: adicionar novo usuário com '.pdf' da avaliação física e ficha de treino. Autor: [Tarciso Filho](https://github.com/tarcisof) Revisado por @assisDaniel
+  - Tela home com operação update para: atualizar dados do usuário e arquivos '.pdf' da avaliação física e ficha de treino. Autor: [Daniel Barbosa](https://github.com/assisDaniel) Revisado por @httpablo
+  - Tela home com operação delete para: deletar usuário com arquivo '.pdf' da avaliação física e ficha de treino. Autor: [Pablo Pereira](https://github.com/httpablo) Revisado por @danmaciel23
+  
+  <br>
+  
+- Se for usuário normal:
+  - Tela home com operação retrieve para: visualizar a avaliação física e ficha de treino. Autor: [Danilo Maciel](https://github.com/danmaciel23) Revisado por @tarcisof
+
+---
 ### Definindo os requisitos funcionais do projeto:
 
 ---
