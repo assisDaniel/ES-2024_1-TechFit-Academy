@@ -20,7 +20,7 @@ include "header.php";
 </div>
 <div class="container">
     <!--    Trocar o href para a tela create depois-->
-
+    <a href="add.php"><button class="btn btn-secondary mb-1">Adicionar</button></a>
     <table class="table text-center">
         <thead class="table-dark">
         <tr>
@@ -33,7 +33,7 @@ include "header.php";
         <?php
         include "conexao.php";
         global $conn;
-        $sql= "select `id`, `nome`, `cpf` from `usuario`";
+        $sql= "select id, nome, cpf from usuario";
         $result = mysqli_query($conn, $sql);
         while($row= mysqli_fetch_assoc($result)){
             ?>
