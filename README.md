@@ -254,3 +254,28 @@ Acessar as informações básicas da academia: horários de funcionamento, horá
 |  Campos                               | Descrição                                                                        |
 |---------------------------------------|----------------------------------------------------------------------------------|
 |  Botão: "Entre em contato"            | direciona para Whatsapp                                                          |
+
+---
+
+# **Protótipos**
+### Autor: @httpablo - Pablo Pereira Brito
+### Revisor: @assisDaniel - Daniel Barbosa de Assis Costa
+
+## Tela Index
+![Idex](./prototipo/idex.png)
+
+## Tela de Login
+![login](./prototipo/login.png)
+
+## Tela de Cadastro
+![Cadastro](./prototipo/cadastro.png)
+
+## Tela Home
+![Home](./prototipo/home.png)
+
+## Tela de Informações
+![Informações](./prototipo/informacoes.png)
+
+## Tela de Admin
+![Admin](./prototipo/admin.png)
+
