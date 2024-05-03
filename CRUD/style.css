@@ -1,0 +1,118 @@
+@charset "UTF 8";
+
+
+.img-style{
+    text-align: center;
+   
+}
+
+h1{
+position: absolute;
+width: 133px;
+height: 72px;
+left: 680px;
+top: 350px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 72px;
+color: #000000;
+}
+
+.form{
+    position: absolute;
+    width: 450px;
+    height: 290px;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+form{    
+    justify-content: center;
+    width: 200px;
+    height: auto;
+}
+
+label{
+    font-size: large;    
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+body{ 
+background: #FFFFFF;
+background: #F9F8F6;
+}
+/* CSS */
+.button-5 {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #f8b704;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 180px;
+}
+
+.button-5:hover,
+.button-5:focus {
+  background-color: #ce9700;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-5:hover {
+  transform: translateY(-1px);
+}
+
+.button-5:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+
+input{
+    border: none;
+    padding: 18px;
+    background-color: #f1f1f1ab;
+    margin-top: 20px;
+    margin-bottom: 15px;   
+    border-radius: 3px;
+    width: 415px;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+p{
+    text-align: left;
+}
+
+a{
+    color: #000000;
+}
