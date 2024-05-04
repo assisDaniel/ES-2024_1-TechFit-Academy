@@ -6,31 +6,30 @@
    
 }
 
-h1{
-position: absolute;
-width: 133px;
-height: 72px;
-left: 680px;
-top: 350px;
-
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 72px;
-color: #000000;
+h1 {
+  position: relative;
+  width: 133px;
+  height: 72px;
+  left: 37%;
+  top: -60px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 72px;
+  color: #000000;
 }
 
-.form{
-    position: absolute;
-    width: 450px;
-    height: 290px;
-    top: 68%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
-    padding: 30px;
-    border-radius: 5px;
+.form {
+  position: relative;
+  width: 450px;
+  height: 290px;
+  top: -80px;
+  left: 37%;
+  /* transform: translate(-50%, -50%); */
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 5px;
 }
 
 form{    
