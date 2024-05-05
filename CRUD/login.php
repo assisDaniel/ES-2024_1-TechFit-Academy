@@ -1,4 +1,6 @@
 <?php
+session_start(); // Inicia a sessão
+
 global $conn;
 include "conexao.php";
 
@@ -10,31 +12,29 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
         echo "Preencha sua senha";
     } else {
 
-        $cpf = $conn->real_escape_string($_POST['cpf']);
-        $senha = $conn->real_escape_string($_POST['senha']);
+        $cpf = $_POST['cpf'];
+        $senha = $_POST['senha'];
 
-        $sql_code = "SELECT * FROM usuario WHERE cpf = '$cpf' AND senha = '$senha'";
-        $sql_query = $conn->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+        $stmt = $conn->prepare("SELECT * FROM usuario WHERE cpf = ? LIMIT 1");
+        $stmt->bind_param("s", $cpf);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        $quantidade = $sql_query->num_rows;
+        if($result->num_rows == 1) {
+            $usuario = $result->fetch_assoc();
 
-        if($quantidade == 1) {
-            
-            $usuario = $sql_query->fetch_assoc();            
-
-            header("Location: index.php");
-
+            if(password_verify($senha, $usuario['senha'])) {
+                $_SESSION['usuario_id'] = $usuario['id'];
+                $_SESSION['usuario_nome'] = $usuario['nome'];
+                header("Location: index.php");
+                exit();
+            } else {
+                echo "Usuário ou senha incorretos!";
+            }
         } else {  
-            ?>
-            <script>
-                    alert("Usuário ou senha incorretos!");
-            </script>          
-            <?php 
-            
+            echo "Usuário ou senha incorretos!";
         }
-
     }
-
 }
 ?>
 
