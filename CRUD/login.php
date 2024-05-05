@@ -1,41 +1,29 @@
 <?php
+session_start(); // Inicia a sessão
+
 global $conn;
 include "conexao.php";
 
-if(isset($_POST['cpf']) || isset($_POST['senha'])) {
+if(isset($_POST['cpf']) && isset($_POST['senha'])) {
+    $cpf = $conn->real_escape_string($_POST['cpf']);
+    $senha = $conn->real_escape_string($_POST['senha']);
 
-    if(strlen($_POST['cpf']) == 0) {
-        echo "Preencha com seu CPF";
-    } else if(strlen($_POST['senha']) == 0) {
-        echo "Preencha sua senha";
+    $sql_code = "SELECT * FROM usuario WHERE cpf = '$cpf' AND senha = '$senha'";
+    $sql_query = $conn->query($sql_code) or die("Falha na execução do código SQL: " . $conn->error);
+
+    $quantidade = $sql_query->num_rows;
+    if($quantidade == 1) {
+        $usuario = $sql_query->fetch_assoc();
+
+        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['usuario_nome'] = $usuario['nome'];
+        header("Location: index.php");
+        exit();
     } else {
-
-        $cpf = $conn->real_escape_string($_POST['cpf']);
-        $senha = $conn->real_escape_string($_POST['senha']);
-
-        $sql_code = "SELECT * FROM usuario WHERE cpf = '$cpf' AND senha = '$senha'";
-        $sql_query = $conn->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-
-        $quantidade = $sql_query->num_rows;
-
-        if($quantidade == 1) {
-            
-            $usuario = $sql_query->fetch_assoc();            
-
-            header("Location: index.php");
-
-        } else {  
-            ?>
-            <script>
-                    alert("Usuário ou senha incorretos!");
-            </script>          
-            <?php 
-            
-        }
-
+        $erro = "Usuário ou senha incorretos!";
     }
-
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +38,9 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
     <div class="img-style"><img src="imagens/logo-techfit1.png" alt="logo"></div>
     <h1>Login</h1>    
     <div class="form">
+        <?php if(isset($erro)) { ?>
+            <p><?php echo $erro; ?></p>
+        <?php } ?>
         <form action="login.php" method="post">
             <label for="cpf">CPF</label><br>
             <input type="text" id="cpf" name="cpf">
