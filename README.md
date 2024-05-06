@@ -15,6 +15,11 @@
 O projeto "TechFit Academy" visa disponibilizar aos usuários acesso aos serviços online da academia. Tendo em vista uma forma de facilitar o acesso aos serviços disponíveis na academia, o projeto disponibiliza acesso básico aos serviços, dentro os quais estão: Visualizar avaliações físicas, visualizar fichas de treinos e acesso a informações
 
 ---
+## Relatórios de Gestão
+- [1ª Iteração](https://docs.google.com/spreadsheets/d/1Iha1DNPsv8svFlG1MQ0vrkFOPZ2pTirbz946IJhHFOw/edit?usp=sharing)
+- [2ª Iteração](https://docs.google.com/spreadsheets/d/1Iha1DNPsv8svFlG1MQ0vrkFOPZ2pTirbz946IJhHFOw/edit#gid=988979781)
+
+---
 ## 1ª Iteração - (03/04/2024 - 16/04/2024)
 
 Nesta primeira iteração, temos como objetivo dar o primeiro passo no projeto. Desse modo, faremos a 'Tela home' da forma como foi esboçada no event storming. Entretanto, como o objetivo dessa atividade é construir a parte de valor do projeto, tomaremos como se já tivesse sido feita a parte de autenticação, ou seja, poderemos fazer um cadastro diretamente pelo banco de dados mas pularemos a autenticação.
@@ -28,6 +33,16 @@ Nesta primeira iteração, temos como objetivo dar o primeiro passo no projeto. 
   
 - Se for usuário normal:
   - Tela home com operação retrieve para: visualizar a avaliação física e ficha de treino. Autor: [Danilo Maciel](https://github.com/danmaciel23) Revisado por @tarcisof
+
+---
+## 2ª Iteração - (17/04/2024 - 07/05/2024)
+Objetivo da iteração: como usuário quero me autenticar e conseguir o acesso às funcionalidades do site. <br>
+
+- Criar protótipos do site. Autor: [Pablo Pereira](https://github.com/httpablo) Revisado por @assisDaniel
+- Atualizar README com planejamento da iteração. Autor: [Daniel Barbosa](https://github.com/assisDaniel) Revisado por @danmaciel23
+- Implementar tela de login. Autor: [Danilo Maciel](https://github.com/danmaciel23) Revisado por @tarcisof
+- Implementar controle de seção. Autor: [Tarciso Filho](https://github.com/tarcisof) Revisado por @httpablo
+- Gerar release dessa versão do produto. Autor: [Daniel Barbosa](https://github.com/assisDaniel) Revisado por @tarcisof
 
 ---
 ### Definindo os requisitos funcionais do projeto:
@@ -240,3 +255,28 @@ Acessar as informações básicas da academia: horários de funcionamento, horá
 |  Campos                               | Descrição                                                                        |
 |---------------------------------------|----------------------------------------------------------------------------------|
 |  Botão: "Entre em contato"            | direciona para Whatsapp                                                          |
+
+---
+
+# **Protótipos**
+### Autor: @httpablo - Pablo Pereira Brito
+### Revisor: @assisDaniel - Daniel Barbosa de Assis Costa
+
+## Tela Index
+![Idex](./prototipo/idex.png)
+
+## Tela de Login
+![login](./prototipo/login.png)
+
+## Tela de Cadastro
+![Cadastro](./prototipo/cadastro.png)
+
+## Tela Home
+![Home](./prototipo/home.png)
+
+## Tela de Informações
+![Informações](./prototipo/informacoes.png)
+
+## Tela de Admin
+![Admin](./prototipo/admin.png)
+
