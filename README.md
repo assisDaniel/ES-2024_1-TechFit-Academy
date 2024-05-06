@@ -17,6 +17,7 @@ O projeto "TechFit Academy" visa disponibilizar aos usuários acesso aos serviç
 ---
 ## Relatórios de Gestão
 - [1ª Iteração](https://docs.google.com/spreadsheets/d/1Iha1DNPsv8svFlG1MQ0vrkFOPZ2pTirbz946IJhHFOw/edit?usp=sharing)
+- [2ª Iteração](https://docs.google.com/spreadsheets/d/1Iha1DNPsv8svFlG1MQ0vrkFOPZ2pTirbz946IJhHFOw/edit#gid=988979781)
 
 ---
 ## 1ª Iteração - (03/04/2024 - 16/04/2024)
