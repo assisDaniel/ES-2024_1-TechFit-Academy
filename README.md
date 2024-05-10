@@ -45,6 +45,18 @@ Objetivo da iteração: como usuário quero me autenticar e conseguir o acesso �
 - Gerar release dessa versão do produto. Autor: [Daniel Barbosa](https://github.com/assisDaniel) Revisado por @tarcisof
 
 ---
+## 3ª Iteração - (08/05/2024 - 21/05/2024)
+Para visualizar o planejamento mais detalhado: [CLIQUE AQUI](https://github.com/users/assisDaniel/projects/5)<br>
+Objetivo da iteração: mudança de arquitetura e implementação da Tela de Cadastro. <br>
+
+- Refatoração do Projeto para uso de Arquitetura MVC:
+  - Implementação dos Models. Autor: [Tarciso Filho](https://github.com/tarcisof). Revisado por @assisDaniel
+  - Implementação dos Controllers. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @danmaciel23
+  - Implementação das Views. Autor: [Danilo Maciel](https://github.com/danmaciel23). Revisado por @tarcisof
+- Implementação da Tela de Cadastro. Autor: [Pablo Pereira](https://github.com/httpablo). Revisado por @assisDaniel
+- Gerar release da versão com nova arquitetura. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @tarcisof
+
+---
 ### Definindo os requisitos funcionais do projeto:
 
 ---
