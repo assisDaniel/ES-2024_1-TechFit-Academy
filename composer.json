@@ -1,0 +1,19 @@
+{
+    "name": "assisdaniel/es-2024_1-techfit-academy",
+    "type": "false",
+    "autoload": {
+        "psr-4": {
+            "Assisdaniel\\Es20241TechfitAcademy\\": "src/",
+            "model": "src/Models",
+            "view": "src/Views",
+            "controller": "src/Controllers"
+        }
+    },
+    "authors": [
+        {
+            "name": "assisDaniel",
+            "email": "116357551+assisDaniel@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

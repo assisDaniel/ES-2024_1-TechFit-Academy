@@ -79,20 +79,20 @@ Caso queira visualizar, clique abaixo: <br>
 ### Revisor: @assisDaniel - Daniel Barbosa de Assis Costa
 
 ## Tela Index
-![Index](prototipos/index.png)
+![Index](Prototipos/index.png)
 
 ## Tela de Login
-![login](prototipos/login.png)
+![login](Prototipos/login.png)
 
 ## Tela de Cadastro
-![Cadastro](prototipos/cadastro.png)
+![Cadastro](Prototipos/cadastro.png)
 
 ## Tela Home
-![Home](prototipos/home.png)
+![Home](Prototipos/home.png)
 
 ## Tela de Informações
-![Informações](prototipos/informacoes.png)
+![Informações](Prototipos/informacoes.png)
 
 ## Tela de Admin
-![Admin](prototipos/admin.png)
+![Admin](Prototipos/admin.png)
 
