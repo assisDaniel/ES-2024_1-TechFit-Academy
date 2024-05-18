@@ -3,10 +3,9 @@
     "type": "false",
     "autoload": {
         "psr-4": {
-            "Assisdaniel\\Es20241TechfitAcademy\\": "src/",
-            "model": "src/Models",
-            "view": "src/Views",
-            "controller": "src/Controllers"
+            "model\\": "src/Models",
+            "view\\": "src/Views",
+            "controller\\": "src/Controllers"
         }
     },
     "authors": [
@@ -15,5 +14,7 @@
             "email": "116357551+assisDaniel@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-mysqli": "*"
+    }
 }
