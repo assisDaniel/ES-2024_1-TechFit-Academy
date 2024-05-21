@@ -28,5 +28,8 @@ switch ($url[1]) {
         controller\CadastroController::carregarTelaCadastro();
         break;
 
+    case "home":
+        include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/Home.php"; //eventualmente será substituído por carregarTelaHome()
+        break;
 }
 ?>
