@@ -58,6 +58,16 @@ Objetivo da iteração: mudança de arquitetura e implementação da Tela de Cad
 - Gerar release da versão com nova arquitetura. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @tarcisof
 
 ---
+## 4ª Iteração - (22/05/2024 - 04/06/2024)
+Para visualizar o planejamento mais detalhado: [CLIQUE AQUI](https://github.com/users/assisDaniel/projects/5)<br>
+Objetivo da iteração: implementação das telas Index e Home, além de updates em outras telas.<br>
+
+- Update na parte dos protótipos do site. Autor: [Pablo Pereira](https://github.com/httpablo) Revisado por @assisDaniel
+- Hotfix na Tela de Login. Autor: [Danilo Maciel](https://github.com/danmaciel23) Revisado por @httpablo
+- Implementação da Tela Index. Autor: [Tarciso Filho](https://github.com/tarcisof). Revisado por @danmaciel23
+- Implementação da Tela Home. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @tarcisof
+
+---
 ### Definindo os requisitos funcionais do projeto:
 
 ---
