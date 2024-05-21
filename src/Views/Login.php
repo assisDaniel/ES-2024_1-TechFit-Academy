@@ -32,7 +32,7 @@
         <br>
         <button type="submit" class="button-5" name="botaoLogin">Entrar</button>
     </form>
-    <p>Ainda não possui conta? <a href="cadastro.php">Cadastre-se</a></p>
+    <p>Ainda não possui conta? <a href="/cadastro">Cadastre-se</a></p>
 </div>
 </body>
 </html>
