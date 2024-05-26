@@ -107,6 +107,11 @@ Caso queira visualizar, clique abaixo: <br>
 ## Tela de Informações
 ![Informações](Prototipos/informacoes.png)
 
-## Tela de Admin
-![Admin](Prototipos/admin.png)
+## Tela de Admin Home
+![AdminHome](Prototipos/adminHome.png)
 
+## Tela de Admin Adicionar
+![AdminAdicionar](Prototipos/adminAdicionar.png)
+
+## Tela de Admin Editar
+![AdminEditar](Prototipos/adminEditar.png)
