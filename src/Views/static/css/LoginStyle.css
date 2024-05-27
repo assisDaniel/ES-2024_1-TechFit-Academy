@@ -1,8 +1,11 @@
 @charset "UTF 8";
 
 
-.img-style{
-    text-align: center;
+.img-style img {
+    display: block;
+    margin: 0 auto; 
+    width: 350px;
+    height: 350px;
 
 }
 

@@ -5,7 +5,7 @@ $url = explode("/", $_SERVER["REQUEST_URI"]);
 
 switch ($url[1]) {
     case "":
-        controller\LoginController::carregarTelaLogin();
+        controller\indexController::carregarTelaInicial();
         break;
 
     case "login":
@@ -28,8 +28,14 @@ switch ($url[1]) {
         controller\CadastroController::carregarTelaCadastro();
         break;
 
-    case "home":
-        include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/Home.php"; //eventualmente será substituído por carregarTelaHome()
+        case "home":
+        header("Location: /src/Views/Home.php");
         break;
+    
+        default:
+        http_response_code(404);
+        echo 'Página não encontrada';
+        break;
+    
 }
 ?>
