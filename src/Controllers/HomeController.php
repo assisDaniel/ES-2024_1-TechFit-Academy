@@ -7,9 +7,14 @@ class HomeController extends Controller{
     private $nome;
     private $pathFicha;
     private $pathAval;
+    private $data;
 
-    public function __construct(){
+    public function __construct($id, $nome, $pathFicha, $pathAval){
         parent::__construct();
+        $this->id = $id;
+        $this->nome = $nome;
+        $this->pathFicha = $pathFicha;
+        $this->pathAval = $pathAval;
     }
 
     public static function carregarTelaHome(){
@@ -27,7 +32,30 @@ class HomeController extends Controller{
             exit();
         }
 
+        $id= $_SESSION['id'];
+        $nome = $_SESSION['nome'];
+
+        $user = new HomeController($id, $nome, null, null);
+        $user->setValues();
+
         include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/Home.php";
+    }
+
+    public function setValues(){
+        $data = [
+            "id"=> $this->id,
+            "nome"=>$this->nome,
+            "pathFicha"=>$this->pathFicha,
+            "pathAval"=>$this->pathAval
+        ];
+
+        $this->data= $this->homeModel->getValues($this->conexao, $data);
+
+        $_SESSION['nome']= $this->data['nome'];
+        $_SESSION['pathFicha']= $this->data['pathFicha'];
+        $_SESSION['pathAval']= $this->data['pathAval'];
+
+        return new HomeController($data['id'], $data['nome'], $data['pathFicha'], $data['pathAval']);
     }
 
     public static function actionLogout(){
@@ -46,7 +74,6 @@ class HomeController extends Controller{
 
         header("Location: /");
     }
-
 
     public static function actionTreino(){
         if(isset($_POST['botaoTreino'])){

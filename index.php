@@ -5,7 +5,7 @@ $url = explode("/", $_SERVER["REQUEST_URI"]);
 
 switch ($url[1]) {
     case "":
-        controller\indexController::carregarTelaInicial();
+        controller\IndexController::carregarTelaInicial();
         break;
 
     case "login":
@@ -34,6 +34,22 @@ switch ($url[1]) {
                     controller\HomeController::actionLogout();
                     break;
                 }
+
+                if($url[2]=="ficha"){
+                    controller\HomeController::actionTreino();
+                    break;
+                }
+
+                if($url[2]=="avaliacao"){
+                    controller\HomeController::actionAval();
+                    break;
+                }
+
+                if($url[2]== "info"){
+                    controller\HomeController::actionInfo();
+                    break;
+                }
+
             }
             controller\HomeController::carregarTelaHome();
             break;

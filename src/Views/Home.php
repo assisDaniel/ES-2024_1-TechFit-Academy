@@ -23,8 +23,7 @@
 
     <p>
         <?php
-        $nome = $_SESSION['nome'];
-        echo $nome;
+        echo $_SESSION['nome'];
         ?>
     </p>
 
@@ -40,23 +39,24 @@
 </div>
 
 <div class="container">
-    <button type="submit" name="botaoTreino" class="box" formtarget="_blank">
+    <button type="submit" name="botaoAval" class="box" formtarget="_blank" formaction="home/ficha">
         <img class="boxImage" src="/src/Views/static/icons/peso.svg">
         <h1>Treino</h1>
         <p>Ficha de exercícios</p>
     </button>
 
-    <button type="submit" name="botaoAval" class="box" formtarget="_blank">
+    <button type="submit" name="botaoAval" class="box" formtarget="_blank" formaction="home/avaliacao">
         <img class="boxImage" src="/src/Views/static/icons/fita-metrica.svg">
         <h1>Avaliações</h1>
         <p>Veja sua evolução</p>
     </button>
 
-    <button type="submit" name="botaoInfo" class="box" formtarget="_blank">
+    <button type="submit" name="botaoInfo" class="box" formtarget="_blank" formaction="home/info">
         <img class="boxImage" src="/src/Views/static/icons/calendario.svg">
         <h1>Informações</h1>
         <p>Horários e contatos</p>
     </button>
+
 </div>
 </body>
 </html>

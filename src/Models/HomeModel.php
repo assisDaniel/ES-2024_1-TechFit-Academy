@@ -15,6 +15,14 @@ class HomeModel{
         return $result;
     }
 
+    function getValues($conexao, $data){
+        $data['nome']= $this->getPrimeiroNome($conexao, $data['id']);
+        $data['pathFicha']= $this->getFichaPath($conexao, $data['id']);
+        $data['pathAval']= $this->getAvalPath($conexao, $data['id']);
+
+        return $data;
+    }
+
     function getPrimeiroNome($conexao, $id){
         $sql = "select nome from usuario where id= '$id'";
         $result = $this->executarQuery($conexao, $sql);
@@ -37,6 +45,7 @@ class HomeModel{
         $row = mysqli_fetch_assoc($result);
         return $row['pdf_avaliacao'];
     }
+
     function getFichaPath($conexao, $id){
         $sql= "select pdf_ficha from usuario where id='$id'";
         $result= $this->executarQuery($conexao, $sql);
