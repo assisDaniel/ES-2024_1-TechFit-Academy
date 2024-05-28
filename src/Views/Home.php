@@ -1,39 +1,62 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--    BootStrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg" href="/src/Views/static/icons/favicon.svg">
+    <title>Home</title>
 
-    <title>Dados dos alunos</title>
+    <link rel="stylesheet" href="/src/Views/static/css/home.css">
+    <link rel="stylesheet" href="/src/Views/static/css/global.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body style="text-align: center;">
-<header class="page-header">
-    <div class="page-header">
-        <h1 class="display-1 text-center" style="background-color: lightblue"><a href="adminHome.php" style="text-decoration: none; color: black; font-size: 50pt">TechFit Academy</a></h1>
+
+<body>
+<div class="userInfo">
+    <div class="userImage">
+        <img src="/src/Views/static/icons/user.svg" alt="Imagem do usuário">
     </div>
-</header>
-<h1>Visualizar informações</h1>
-<?php
-    if(session_status() == PHP_SESSION_NONE) session_start();
-    echo "Essa tela não é definitiva, só está aqui temporariamente para ter uma tela de destino depois da ação de Login.";
-echo '<p>' . "\n" . '</p>';
-echo "ID: ".$_SESSION["id"];
-echo '<p>' . "\n" . '</p>';
-echo "Nome: ".$_SESSION["nome"];
-?>
-<br>
-<a href="ficha.php">
-    <button type="button" class="btn btn-primary">Visualizar Ficha</button>
-</a>
 
-<a href="avaliacao.php">
-    <button type="avaliacao.php" class="btn btn-primary">Visualizar Avaliação</button>
-</a>
+    <p>
+        <?php
+        $nome = $_SESSION['nome'];
+        echo $nome;
+        ?>
+    </p>
 
+    <div class="logout">
+        <a href="home/logout">
+            <img src="/src/Views/static/icons/logout.svg">
+        </a>
+    </div>
+</div>
 
+<div class="title">
+    <h1>Funcionalidades</h1>
+</div>
 
+<div class="container">
+    <button type="submit" name="botaoTreino" class="box" formtarget="_blank">
+        <img class="boxImage" src="/src/Views/static/icons/peso.svg">
+        <h1>Treino</h1>
+        <p>Ficha de exercícios</p>
+    </button>
+
+    <button type="submit" name="botaoAval" class="box" formtarget="_blank">
+        <img class="boxImage" src="/src/Views/static/icons/fita-metrica.svg">
+        <h1>Avaliações</h1>
+        <p>Veja sua evolução</p>
+    </button>
+
+    <button type="submit" name="botaoInfo" class="box" formtarget="_blank">
+        <img class="boxImage" src="/src/Views/static/icons/calendario.svg">
+        <h1>Informações</h1>
+        <p>Horários e contatos</p>
+    </button>
+</div>
 </body>
+</html>

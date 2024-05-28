@@ -29,13 +29,19 @@ switch ($url[1]) {
         break;
 
         case "home":
-        header("Location: /src/Views/Home.php");
-        break;
+            if(isset($url[2])){
+                if($url[2]=="logout"){
+                    controller\HomeController::actionLogout();
+                    break;
+                }
+            }
+            controller\HomeController::carregarTelaHome();
+            break;
     
         default:
-        http_response_code(404);
-        echo 'Página não encontrada';
-        break;
+            http_response_code(404);
+            echo 'Página não encontrada';
+            break;
     
 }
 ?>
