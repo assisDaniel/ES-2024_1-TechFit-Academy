@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
     <link rel="stylesheet" href="/src/Views/static/css/indexStyle.css">
-    <link rel="icon" href="/src/Views/static/icons/logo-techfit2.png" type="image/png">
+    <link rel="icon" href="/src/Views/static/icons/favicon.svg" type="image/svg">
 </head>
 <body>
 <div class="img-style"><img src="/src/Views/static/icons/logo-techfit1.png" alt="logo"></div>
