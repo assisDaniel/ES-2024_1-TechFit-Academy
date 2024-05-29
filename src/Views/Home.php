@@ -52,7 +52,7 @@
         <p>Veja sua evolução</p>
     </button>
 
-    <button type="button" name="botaoInfo" class="box" onclick="window.open('home/info')">
+    <button type="button" name="botaoInfo" class="box" onclick="window.location.href='home/info'">
         <img class="boxImage" src="/src/Views/static/icons/calendario.svg">
         <h1>Informações</h1>
         <p>Horários e contatos</p>
