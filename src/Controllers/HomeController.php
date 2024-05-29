@@ -76,20 +76,41 @@ class HomeController extends Controller{
     }
 
     public static function actionTreino(){
-        if(isset($_POST['botaoTreino'])){
+        session_start();
+        $path= $_SESSION['pathFicha'];
 
+        if(file_exists($path)){
+            header('Content-Type: application/pdf');
+            header('Content-Disposition: attachment; filename="'. basename($path). '"');
+            header('Content-Length: '. filesize($path));
+
+            readfile($path);
+            exit();
+        }else{
+            echo "Arquivo não encontrado!\n";
+            echo "Entre em contato conosco, '<a href='home/info'>Informações</a>'";
         }
     }
 
     public static function actionAval(){
-        if(isset($_POST['botaoAval'])){
+        session_start();
+        $path= $_SESSION['pathAval'];
+        if(file_exists($path)){
+            header('Content-Type: application/pdf');
+            header('Content-Disposition: attachment; filename="'. basename($path). '"');
+            header('Content-Length: '. filesize($path));
 
+            readfile($path);
+            exit();
+        }else{
+            echo "Arquivo não encontrado!\n";
+            echo "Entre em contato conosco, '<a href='home/info' style='text-decoration: black'>Informações</a>'";
         }
     }
 
-    public static function actionInfo(){
-        if(isset($_POST['botaoInfo'])){
+    public static function carregarTelaInfo(){
+        if(session_status() == PHP_SESSION_NONE) session_start();
 
-        }
+        include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/Info.php"; //Arquivo ainda não existe.
     }
 }

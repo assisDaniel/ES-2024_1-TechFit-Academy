@@ -8,6 +8,8 @@
   
   <link rel="stylesheet" href="/src/Views/static/css/cadastro.css">
   <link rel="stylesheet" href="/src/Views/static/css/global.css">
+    <link rel="icon" href="/src/Views/static/icons/favicon.svg" type="image/svg">
+
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

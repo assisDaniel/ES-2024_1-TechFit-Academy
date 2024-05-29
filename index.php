@@ -46,7 +46,7 @@ switch ($url[1]) {
                 }
 
                 if($url[2]== "info"){
-                    controller\HomeController::actionInfo();
+                    controller\HomeController::carregarTelaInfo();
                     break;
                 }
 
