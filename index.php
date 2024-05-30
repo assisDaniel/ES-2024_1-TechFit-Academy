@@ -5,7 +5,7 @@ $url = explode("/", $_SERVER["REQUEST_URI"]);
 
 switch ($url[1]) {
     case "":
-        controller\indexController::carregarTelaInicial();
+        controller\IndexController::carregarTelaInicial();
         break;
 
     case "login":
@@ -29,13 +29,35 @@ switch ($url[1]) {
         break;
 
         case "home":
-        header("Location: /src/Views/Home.php");
-        break;
+            if(isset($url[2])){
+                if($url[2]=="logout"){
+                    controller\HomeController::actionLogout();
+                    break;
+                }
+
+                if($url[2]=="ficha"){
+                    controller\HomeController::actionTreino();
+                    break;
+                }
+
+                if($url[2]=="avaliacao"){
+                    controller\HomeController::actionAval();
+                    break;
+                }
+
+                if($url[2]== "info"){
+                    controller\HomeController::carregarTelaInfo();
+                    break;
+                }
+
+            }
+            controller\HomeController::carregarTelaHome();
+            break;
     
         default:
-        http_response_code(404);
-        echo 'Página não encontrada';
-        break;
+            http_response_code(404);
+            echo 'Página não encontrada';
+            break;
     
 }
 ?>

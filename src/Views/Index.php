@@ -8,7 +8,7 @@
     <link rel="icon" href="/src/Views/static/icons/favicon.svg" type="image/svg">
 </head>
 <body>
-<div class="img-style"><img src="/src/Views/static/icons/logo-techfit1.png" alt="logo"></div>
+<div class="img-style"><img src="/src/Views/static/icons/logo-techfit1.svg" alt="logo"></div>
 
 <h1 class="title"></h1>
 <div class="container">

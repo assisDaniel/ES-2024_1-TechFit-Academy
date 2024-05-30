@@ -70,7 +70,7 @@ class LoginController extends Controller{
             }
 
             $_SESSION['camposInvalidos'] = "CPF ou senha incorretos!";
-            header("Location: /");
+            header("Location: /login");
         }
     }
 }

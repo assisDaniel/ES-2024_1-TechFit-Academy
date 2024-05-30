@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
     <link rel="stylesheet" href="/src/Views/static/css/LoginStyle.css">
+    <link rel="icon" href="/src/Views/static/icons/favicon.svg" type="image/svg">
 </head>
 <body>
-<div class="img-style"><img src="/src/Views/static/icons/logo-techfit1.png" alt="logo"></div>
+<div class="img-style"><img src="/src/Views/static/icons/logo-techfit1.svg" alt="logo"></div>
 <h1>Login</h1>
 <div class="form">
     <?php
