@@ -72,6 +72,18 @@ Objetivo da iteração: implementação das telas Index e Home, além de updates
 - Implementação da Tela Home. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @tarcisof
 
 ---
+## 5ª Iteração - (05/06/2024 - 18/06/2024)
+Para visualizar o planejamento mais detalhado: [CLIQUE AQUI](https://github.com/users/assisDaniel/projects/5)<br>
+Objetivo da iteração: implementação das features que compoem a parte do admin e criação de teste unitários.
+
+- Feature - Home do Admin. Autor: [Danilo Maciel](https://github.com/danmaciel23). Revisado por @httpablo.
+- Feature - Adicionar do Admin. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @danmaciel23
+- Feature - Editar do Admin. Autor: [Tarciso Filho](https://github.com/tarcisof). Revisado por @assisDaniel
+- Feature - Deletar do Admin. Autor: [Pablo Pereira](https://github.com/httpablo). Revisado por @tarcisof
+- Feature - Informações da Academia. Autor: [Pablo Pereira](https://github.com/httpablo). Revisado por @assisDaniel
+- Implementação de Testes Unitários. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @httpablo
+
+---
 ### Definindo os requisitos funcionais do projeto:
 
 ---
