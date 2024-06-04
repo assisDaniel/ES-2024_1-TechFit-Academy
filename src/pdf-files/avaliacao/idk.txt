@@ -1,0 +1,1 @@
+Avaliação: apenas um arquivo qualquer para o git não ignorar.

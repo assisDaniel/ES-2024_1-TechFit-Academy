@@ -15,10 +15,14 @@
 O projeto "TechFit Academy" visa disponibilizar aos usuários acesso aos serviços online da academia. Tendo em vista uma forma de facilitar o acesso aos serviços disponíveis na academia, o projeto disponibiliza acesso básico aos serviços, dentro os quais estão: Visualizar avaliações físicas, visualizar fichas de treinos e acesso a informações
 
 ---
+# Planejamento
+
+---
 ## Relatórios de Gestão
 - [1ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%231.md)
 - [2ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%232.md)
 - [3ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%233.md)
+- [4ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%234.md)
 
 ---
 ## 1ª Iteração - (03/04/2024 - 16/04/2024)
@@ -58,6 +62,16 @@ Objetivo da iteração: mudança de arquitetura e implementação da Tela de Cad
 - Gerar release da versão com nova arquitetura. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @tarcisof
 
 ---
+## 4ª Iteração - (22/05/2024 - 04/06/2024)
+Para visualizar o planejamento mais detalhado: [CLIQUE AQUI](https://github.com/users/assisDaniel/projects/5)<br>
+Objetivo da iteração: implementação das telas Index e Home, além de updates em outras telas.<br>
+
+- Update na parte dos protótipos do site. Autor: [Pablo Pereira](https://github.com/httpablo) Revisado por @assisDaniel
+- Hotfix na Tela de Login. Autor: [Danilo Maciel](https://github.com/danmaciel23) Revisado por @httpablo
+- Implementação da Tela Index. Autor: [Tarciso Filho](https://github.com/tarcisof). Revisado por @danmaciel23
+- Implementação da Tela Home. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @tarcisof
+
+---
 ### Definindo os requisitos funcionais do projeto:
 
 ---
@@ -94,6 +108,11 @@ Caso queira visualizar, clique abaixo: <br>
 ## Tela de Informações
 ![Informações](Prototipos/informacoes.png)
 
-## Tela de Admin
-![Admin](Prototipos/admin.png)
+## Tela de Admin Home
+![AdminHome](Prototipos/adminHome.png)
 
+## Tela de Admin Adicionar
+![AdminAdicionar](Prototipos/adminAdicionar.png)
+
+## Tela de Admin Editar
+![AdminEditar](Prototipos/adminEditar.png)

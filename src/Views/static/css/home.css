@@ -1,0 +1,311 @@
+body{
+    background: #F9F8F6;
+}
+
+.userInfo{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+}
+
+.userImage{
+    position: fixed;
+    display: inherit;
+    width: 60px;
+    height: 60px;
+    top: 25px;
+    left: 30px;
+    opacity: 1;
+}
+
+.userInfo p{
+    position: fixed;
+    display: inherit;
+    font-family: Poppins;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    top: 46px;
+    left: 110px;
+}
+
+.logout{
+    position: fixed;
+    display: inherit;
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    right: 30px;
+    padding: 6.25px;
+    opacity: 1;
+}
+.logout:hover{
+    transform: scale(1.05);
+}
+
+.title{
+    position: fixed;
+    display: block;
+    top: 182px;
+    left: 10%;
+    width: 340px;
+    height: 60px;
+}
+
+.title h1{
+    position: relative;
+    display: inherit;
+    font: 600 2rem "Poppins", sans-serif;
+    margin: auto auto auto auto;
+    height: 60px;
+}
+
+.container{
+    position: fixed;
+    display: flex;
+    width: calc(100% - 10%);
+    height: 25%;
+    top: 278px;
+    left: 5%;
+    gap: 85px;
+    opacity: 1;
+}
+
+.box{
+    position: relative;
+    display: block;
+    width: 20%;
+    height: 100%;
+    border-radius: 6px 6px 6px 6px;
+    opacity: 1;
+    background: #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+
+.box:hover{
+    transform: scale(1.05);
+    background: #E4E4E4;
+}
+.boxImage{
+    position: relative;
+    width: 50%;
+    height: 50%;
+    left: 10%;
+}
+
+.box h1{
+    position: relative;
+    font: 600 24px "Roboto", sans-serif;
+    width: 80%;
+    height: 15%;
+    left: 10%;
+    text-align: left;
+}
+
+.box p{
+    position: relative;
+    font: 450 1rem "Roboto", sans-serif;
+    width: 80%;
+    height: 15%;
+    left: 10%;
+    text-align: left;
+}
+
+@media screen and (max-width: 900px) {
+    .title{
+        position: fixed;
+        display: block;
+        top: 165px;
+        left: 10%;
+        width: 280px;
+        height: 60px;
+    }
+
+    .title h1{
+        position: relative;
+        display: inherit;
+        font: 600 2rem "Poppins", sans-serif;
+        margin: auto auto auto auto;
+        height: 60px;
+    }
+
+    .container{
+        position: fixed;
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100% - 10%);
+        height: 20%;
+        top: 250px;
+        left: 5%;
+        gap: 20px;
+        opacity: 1;
+    }
+
+    .box{
+        position: relative;
+        display: block;
+        width: 40%;
+        height: 100%;
+        border-radius: 6px 6px 6px 6px;
+        opacity: 1;
+        background: #FFFFFF;
+        cursor: pointer;
+    }
+
+    .box:hover{
+        transform: scale(1.05);
+        background: #ffffff;
+    }
+
+    .box h1{
+        position: relative;
+        font: 600 16px "Roboto", sans-serif;
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        text-align: left;
+    }
+
+    .box p{
+        position: relative;
+        font: 450 12px "Roboto", sans-serif;
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        text-align: left;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    .title{
+        position: fixed;
+        display: block;
+        top: 125px;
+        left: 10%;
+        width: 280px;
+        height: 60px;
+    }
+
+    .title h1{
+        position: relative;
+        display: inherit;
+        font: 600 2rem "Poppins", sans-serif;
+        margin: auto auto auto auto;
+        height: 100%;
+    }
+
+    .container{
+        position: fixed;
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100% - 10%);
+        height: 35%;
+        top: 190px;
+        left: 5%;
+        gap: 20px;
+        opacity: 1;
+    }
+
+    .box{
+        position: relative;
+        display: block;
+        width: 30%;
+        height: 100%;
+        border-radius: 6px 6px 6px 6px;
+        opacity: 1;
+        background: #FFFFFF;
+        cursor: pointer;
+    }
+
+    .box:hover{
+        transform: scale(1.05);
+        background: #ffffff;
+    }
+
+    .box h1{
+        position: relative;
+        font: 600 1rem "Roboto", sans-serif;
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        text-align: left;
+    }
+
+    .box p{
+        position: relative;
+        font: 450 12px "Roboto", sans-serif;
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        text-align: left;
+    }
+
+    @media screen and (max-width: 450px){
+        .title{
+            position: fixed;
+            display: block;
+            top: 165px;
+            left: 10%;
+            width: 280px;
+            height: 60px;
+        }
+
+        .title h1{
+            position: relative;
+            display: inherit;
+            font: 600 2rem "Poppins", sans-serif;
+            margin: auto auto auto auto;
+            height: 60px;
+        }
+
+        .container{
+            position: fixed;
+            display: flex;
+            flex-wrap: wrap;
+            width: calc(100% - 10%);
+            height: 20%;
+            top: 250px;
+            left: 5%;
+            gap: 20px;
+            opacity: 1;
+        }
+
+        .box{
+            position: relative;
+            display: block;
+            width: 40%;
+            height: 100%;
+            border-radius: 6px 6px 6px 6px;
+            opacity: 1;
+            background: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .box:hover{
+            transform: scale(1.05);
+            background: #ffffff;
+        }
+
+        .box h1{
+            position: relative;
+            font: 600 16px "Roboto", sans-serif;
+            width: 80%;
+            height: 15%;
+            left: 10%;
+            text-align: left;
+        }
+
+        .box p{
+            position: relative;
+            font: 450 12px "Roboto", sans-serif;
+            width: 80%;
+            height: 15%;
+            left: 10%;
+            text-align: left;
+        }
+    }
+}
