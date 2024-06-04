@@ -3,27 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/src/Views/static/css/LoginStyle.css">
     <link rel="icon" href="/src/Views/static/icons/favicon.svg" type="image/svg">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="tudo">    
-    <div class="img-style"><img src="/src/Views/static/icons/logo-techfit1.svg" alt="logo"></div>
+    <div class="img-style"><img src="/src/Views/static/icons/logo-techfit1.svg" alt="logo" onclick="window.location.href='/'"></div>
     <h1>Login</h1>
     <div class="form">
         <?php
-        if (isset($_SESSION['camposInvalidos'])) {
-            echo '<p>' . $_SESSION['camposInvalidos'] . '</p>';
-            unset($_SESSION['camposInvalidos']);
+        $getter= [];
+
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
         }
-    
-        if (isset($_SESSION['erros'])) {
-            foreach ($_SESSION['erros'] as $campo => $erro) {
+
+        if (isset($_SESSION['camposInvalidos'])) {
+            $getter= json_decode($_SESSION['camposInvalidos'], true);
+            echo '<p>' . $getter['camposInvalidos'] .'</p>';
+            unset($_SESSION['camposInvalidos']);
+            unset($getter);
+        }
+
+        if (isset($_SESSION['errosLogin'])) {
+            $getter= json_decode($_SESSION['errosLogin'], true);
+            foreach ($getter as $campo => $erro) {
                 echo '<p>' . $campo . ':' . $erro . '</p>';
             }
-            unset($_SESSION['erros']);
+            unset($_SESSION['errosLogin']);
+            unset($getter);
         }
         ?>
         <form action="login/process" method="post">

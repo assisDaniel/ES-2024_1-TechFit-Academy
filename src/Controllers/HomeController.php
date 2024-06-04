@@ -7,7 +7,6 @@ class HomeController extends Controller{
     private $nome;
     private $pathFicha;
     private $pathAval;
-    private $data;
 
     public function __construct($id, $nome, $pathFicha, $pathAval){
         parent::__construct();
@@ -27,16 +26,22 @@ class HomeController extends Controller{
             session_start();
         }
 
-        if(!isset($_SESSION['id'])){
+        $getter= json_decode($_SESSION['loginData'], true);
+        $id= $getter['id'];
+        $nome= $getter['nome'];
+
+        if(!isset($id)){
             header("Location: /login");
             exit();
         }
 
-        $id= $_SESSION['id'];
-        $nome = $_SESSION['nome'];
-
         $user = new HomeController($id, $nome, null, null);
         $user->setValues();
+        $_SESSION['userData']= json_encode([
+            "nome"=>$user->nome,
+            "pathFicha"=>$user->pathFicha,
+            "pathAval"=>$user->pathAval
+        ]);
 
         include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/Home.php";
     }
@@ -49,13 +54,13 @@ class HomeController extends Controller{
             "pathAval"=>$this->pathAval
         ];
 
-        $this->data= $this->homeModel->getValues($this->conexao, $data);
+        $data= $this->homeModel->getValues($this->conexao, $data);
 
-        $_SESSION['nome']= $this->data['nome'];
-        $_SESSION['pathFicha']= $this->data['pathFicha'];
-        $_SESSION['pathAval']= $this->data['pathAval'];
+        $this->nome= $data['nome'];
+        $this->pathFicha= $data['pathFicha'];
+        $this->pathAval= $data['pathAval'];
 
-        return new HomeController($data['id'], $data['nome'], $data['pathFicha'], $data['pathAval']);
+        return $this;
     }
 
     public static function actionLogout(){
@@ -77,7 +82,8 @@ class HomeController extends Controller{
 
     public static function actionTreino(){
         session_start();
-        $path= $_SESSION['pathFicha'];
+        $getter= json_decode($_SESSION['userData'], true);
+        $path= $getter['pathFicha'];
 
         if(file_exists($path)){
             header('Content-Type: application/pdf');
@@ -94,7 +100,9 @@ class HomeController extends Controller{
 
     public static function actionAval(){
         session_start();
-        $path= $_SESSION['pathAval'];
+        $getter= json_decode($_SESSION['userData'], true);
+        $path= $getter['pathAval'];
+
         if(file_exists($path)){
             header('Content-Type: application/pdf');
             header('Content-Disposition: attachment; filename="'. basename($path). '"');

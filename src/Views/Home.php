@@ -23,8 +23,13 @@
 
     <p>
         <?php
-//        var_dump($_SESSION);
-        echo $_SESSION['nome'];
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+
+        $getter= json_decode($_SESSION['userData'], true);
+        //        var_dump($getter);
+        echo $getter['nome'];
         ?>
     </p>
 

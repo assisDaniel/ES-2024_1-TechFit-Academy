@@ -5,7 +5,6 @@ namespace controller;
 class LoginController extends Controller{
     private $cpf;
     private $senha;
-    private $result;
 
     public function __construct($cpf, $senha){
         parent::__construct();
@@ -34,14 +33,14 @@ class LoginController extends Controller{
             } else {
                 $erros = [];
 
-                if (empty($_POST['cpf'])) $erros['cpf'] = "O campo cpf deve ser preenchido!";
-                if (empty($_POST['senha'])) $erros['senha'] = "O campo senha deve ser preenchido!";
+                if (empty($_POST['cpf'])) $erros['CPF'] = "O campo cpf deve ser preenchido!";
+                if (empty($_POST['senha'])) $erros['Senha'] = "O campo senha deve ser preenchido!";
 
                 if (session_status() == PHP_SESSION_NONE) {
                     session_start();
                 }
 
-                $_SESSION['erros'] = $erros;
+                $_SESSION['errosLogin'] = json_encode($erros);
                 header("Location: /login");
             }
         }
@@ -54,22 +53,26 @@ class LoginController extends Controller{
             "senha" => $this->senha
         ];
 
-        $this->result = $this->loginModel->verificaLogin($this->conexao, $data);
+        $result = $this->loginModel->verificaLogin($this->conexao, $data);
 
-        if ($this->result) {
+        if ($result) {
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
             }
 
-            $_SESSION['id'] = $this->loginModel->getId($this->conexao, $data['cpf']);
-            $_SESSION['nome'] = $this->loginModel->getNome($this->conexao, $data['cpf']);
+            $_SESSION['loginData']= json_encode([
+                "id"=> $this->loginModel->getId($this->conexao, $data['cpf']),
+                "nome"=> $this->loginModel->getNome($this->conexao, $data['cpf'])
+            ]);
             header("Location: /home");
         } else {
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
             }
 
-            $_SESSION['camposInvalidos'] = "CPF ou senha incorretos!";
+            $_SESSION['camposInvalidos'] = json_encode([
+                "camposInvalidos"=>"CPF ou Senha incorretos!"
+            ]);
             header("Location: /login");
         }
     }
