@@ -7,13 +7,15 @@ class HomeController extends Controller{
     private $nome;
     private $pathFicha;
     private $pathAval;
+    private $isSuperUser;
 
-    public function __construct($id, $nome, $pathFicha, $pathAval){
+    public function __construct($id, $nome, $pathFicha, $pathAval, $isSuperUser){
         parent::__construct();
         $this->id = $id;
         $this->nome = $nome;
         $this->pathFicha = $pathFicha;
         $this->pathAval = $pathAval;
+        $this->isSuperUser = $isSuperUser;
     }
 
     public static function carregarTelaHome(){
@@ -35,12 +37,13 @@ class HomeController extends Controller{
             exit();
         }
 
-        $user = new HomeController($id, $nome, null, null);
+        $user = new HomeController($id, $nome, null, null, null);
         $user->setValues();
         $_SESSION['userData']= json_encode([
             "nome"=>$user->nome,
             "pathFicha"=>$user->pathFicha,
-            "pathAval"=>$user->pathAval
+            "pathAval"=>$user->pathAval,
+            "isSuperUser"=>$user->isSuperUser
         ]);
 
         include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/Home.php";
@@ -51,7 +54,8 @@ class HomeController extends Controller{
             "id"=> $this->id,
             "nome"=>$this->nome,
             "pathFicha"=>$this->pathFicha,
-            "pathAval"=>$this->pathAval
+            "pathAval"=>$this->pathAval,
+            "isSuperUser"=>$this->isSuperUser
         ];
 
         $data= $this->homeModel->getValues($this->conexao, $data);
@@ -59,6 +63,7 @@ class HomeController extends Controller{
         $this->nome= $data['nome'];
         $this->pathFicha= $data['pathFicha'];
         $this->pathAval= $data['pathAval'];
+        $this->isSuperUser= $data['isSuperUser'];
 
         return $this;
     }
