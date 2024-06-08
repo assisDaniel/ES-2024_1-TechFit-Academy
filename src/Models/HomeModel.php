@@ -19,6 +19,7 @@ class HomeModel{
         $data['nome']= $this->getPrimeiroNome($conexao, $data['id']);
         $data['pathFicha']= $this->getFichaPath($conexao, $data['id']);
         $data['pathAval']= $this->getAvalPath($conexao, $data['id']);
+        $data['isSuperUser']= $this->isSuperUser($conexao, $data['id']);
 
         return $data;
     }
@@ -54,5 +55,17 @@ class HomeModel{
 
         $row = mysqli_fetch_assoc($result);
         return $row['pdf_ficha'];
+    }
+
+    function isSuperUser($conexao, $id){
+        $sql = "select superuser from usuario where id= '$id'";
+        $result = $this->executarQuery($conexao, $sql);
+
+        if (mysqli_num_rows($result) == 0) return false;
+
+        $row = mysqli_fetch_assoc($result);
+
+        if($row['superuser'] == "1") return true;
+        return false;
     }
 }

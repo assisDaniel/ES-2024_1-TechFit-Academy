@@ -28,36 +28,46 @@ switch ($url[1]) {
         controller\CadastroController::carregarTelaCadastro();
         break;
 
-        case "home":
-            if(isset($url[2])){
-                if($url[2]=="logout"){
-                    controller\HomeController::actionLogout();
-                    break;
-                }
-
-                if($url[2]=="ficha"){
-                    controller\HomeController::actionTreino();
-                    break;
-                }
-
-                if($url[2]=="avaliacao"){
-                    controller\HomeController::actionAval();
-                    break;
-                }
-
-                if($url[2]== "info"){
-                    controller\HomeController::carregarTelaInfo();
-                    break;
-                }
-
+    case "home":
+        if(isset($url[2])){
+            if($url[2]=="logout"){
+                controller\HomeController::actionLogout();
+                break;
             }
-            controller\HomeController::carregarTelaHome();
-            break;
-    
-        default:
-            http_response_code(404);
-            echo 'Página não encontrada';
-            break;
-    
+
+            if($url[2]=="ficha"){
+                controller\HomeController::actionTreino();
+                break;
+            }
+
+            if($url[2]=="avaliacao"){
+                controller\HomeController::actionAval();
+                break;
+            }
+
+            if($url[2]== "info"){
+                controller\HomeController::carregarTelaInfo();
+                break;
+            }
+
+        }
+        controller\HomeController::carregarTelaHome();
+        break;
+
+    case "api":
+        if(isset($url[2])){
+            if(is_numeric($url[2])){
+                controller\ApiController::apiUser($url[2]);
+                break;
+            }
+        }
+        controller\ApiController::apiAllUsers();
+        break;
+
+    default:
+        http_response_code(404);
+        echo 'Página não encontrada';
+        break;
+
 }
 ?>
