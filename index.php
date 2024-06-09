@@ -64,6 +64,27 @@ switch ($url[1]) {
         controller\ApiController::apiAllUsers();
         break;
 
+    case "admin":
+        if(isset($url[2])){
+            if($url[2] == "add"){
+                if(isset($url[3])){
+                    if($url[3]=="process"){
+                        controller\AdminController::actionAdd();
+                        break;
+                    }
+                }
+                controller\AdminController::carregarTelaAdminAdd();
+                break;
+            }else if($url[2] == "edit"){
+                controller\AdminController::carregarTelaAdminEdit();
+                break;
+            }else if($url[2] == "delete"){
+                controller\AdminController::actionDelete();
+            }
+        }
+        controller\AdminController::carregarTelaAdmin();
+        break;
+
     default:
         http_response_code(404);
         echo 'Página não encontrada';
