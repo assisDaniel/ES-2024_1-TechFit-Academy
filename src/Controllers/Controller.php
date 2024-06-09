@@ -15,6 +15,7 @@ class Controller{
     public $cadastroModel;
     public $homeModel;
     public $apiModel;
+    public $adminModel;
 
     // Aqui eu faço instanciação com todos os modelos.
     public function __construct(){
@@ -24,5 +25,6 @@ class Controller{
         $this->cadastroModel= new CadastroModel();
         $this->homeModel= new HomeModel();
         $this->apiModel= new ApiModel();
+        $this->adminModel= new AdminModel();
     }
 }

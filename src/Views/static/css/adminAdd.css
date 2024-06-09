@@ -1,0 +1,297 @@
+body{
+    background: #F9F8F6;
+}
+
+.userInfo{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+}
+
+.userImage{
+    position: fixed;
+    display: inherit;
+    width: 60px;
+    height: 60px;
+    top: 25px;
+    left: 30px;
+    opacity: 1;
+}
+
+.userInfo p{
+    position: fixed;
+    display: inherit;
+    font-family: Poppins;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    top: 46px;
+    left: 110px;
+}
+
+.title{
+    position: fixed;
+    display: block;
+    top: 16%;
+    left: 15%;
+    width: 340px;
+    height: 60px;
+}
+
+.title h1{
+    position: relative;
+    display: inherit;
+    font: 600 2rem "Poppins", sans-serif;
+    margin: auto auto auto auto;
+    height: 60px;
+}
+
+.container{
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    width: calc(100% - 30%);
+    height: 70%;
+    top: 217px;
+    left: 15%;
+    opacity: 1;
+    background: #ffffff;
+}
+
+.col{
+    position: relative;
+    display: block;
+    width: calc(100% - 10%);
+    height: calc(100% - 7%);
+    top: 15%;
+    left: 5%;
+}
+
+.form-label{
+    position: relative;
+    display: inherit;
+    font: 600 1rem "Roboto", sans-serif;
+    line-height: 18.75px;
+    width: calc(100% - 20%);
+    height: 30%;
+}
+
+.form-input{
+    position: relative;
+    display: inherit;
+    background: #F9F8F6;
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    width: 80%;
+    height: calc(100% - 55%);
+}
+
+.file-input{
+    display: none;
+}
+
+.custom-file-input{
+    position: relative;
+    display: inherit;
+    background: #D1D6DC;
+    border: none;
+    border-radius: 2px 2px 2px 2px;
+    width: 40%;
+    height: calc(100% - 55%);
+    text-align: center;
+    cursor:pointer;
+}
+
+.file-label-text{
+    position: relative;
+    font: 400 1rem "Roboto", sans-serif;
+    top: 25%;
+}
+
+.botao{
+    position: relative;
+    background: #2A82EA;
+    color: white;
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    width: 15%;
+    height: 50%;
+    top: 25%;
+    left: 0;
+    font: 400 1rem "Roboto", sans-serif;
+
+}
+
+.botao:hover{
+    cursor: pointer;
+}
+
+.container .col:nth-child(7),
+.container .col:nth-child(8),
+.container .col:nth-child(9) {
+    grid-column: span 2;
+    left: 2.5%;
+}
+
+@media screen and (max-width: 430px){
+
+    .title{
+        position: fixed;
+        display: block;
+        top: 16%;
+        width: 300px;
+        height: 60px;
+        left: 10%;
+    }
+
+    .title h1{
+        position: relative;
+        display: inherit;
+        font: 600 2rem "Poppins", sans-serif;
+        margin: auto auto auto auto;
+        height: 60px;
+    }
+
+    .container{
+        position: fixed;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        width: calc(100% - 20%);
+        height: 70%;
+        top: 25%;
+        left: 10%;
+        opacity: 1;
+        background: #ffffff;
+    }
+
+    .container .col:nth-child(6) .form-label{
+        font: 600 14px "Roboto", sans-serif;
+        width: 100%;
+    }
+
+    .container .col:nth-child(6) .form-input{
+        width: 100%;
+    }
+
+    .container .col:nth-child(7) .custom-file-input,
+    .container .col:nth-child(8) .custom-file-input{
+        width: 75%;
+    }
+
+    .botao{
+        width: 40%;
+    }
+}
+
+@media screen and (max-height: 430px){
+    .userInfo{
+        display: flex;
+        position: fixed;
+        width: 100%;
+        height: 70px;
+    }
+
+    .userImage{
+        position: fixed;
+        display: inherit;
+        width: 40px;
+        height: 40px;
+        top: 25px;
+        left: 30px;
+        opacity: 1;
+    }
+
+    .userInfo p{
+        position: fixed;
+        display: inherit;
+        font-family: Poppins;
+        color: #000000;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        text-align: left;
+        top: 31px;
+        left: 10%;
+    }
+
+    .title{
+        position: fixed;
+        display: block;
+        top: 16%;
+        left: 5%;
+        width: 340px;
+        height: 40px;
+        left: 10%;
+    }
+
+    .title h1{
+        position: relative;
+        display: inherit;
+        font: 600 28px "Poppins", sans-serif;
+        margin: auto auto auto auto;
+        height: 40px;
+    }
+
+    .container{
+        position: fixed;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        width: calc(100% - 20%);
+        height: 70%;
+        top: 25%;
+        left: 10%;
+        opacity: 1;
+        background: #ffffff;
+    }
+
+    .form-label{
+        position: relative;
+        display: inherit;
+        font: 600 14px "Roboto", sans-serif;
+        line-height: 18.75px;
+        width: calc(100% - 20%);
+        height: 30%;
+    }
+
+    .form-input{
+        position: relative;
+        display: inherit;
+        background: #F9F8F6;
+        border: none;
+        border-radius: 4px 4px 4px 4px;
+        top: 10%;
+        width: 80%;
+        height: calc(100% - 50%);
+    }
+
+    .file-input{
+        display: none;
+    }
+
+    .container .col:nth-child(6) .form-input{
+        width: 80%;
+    }
+
+    .container .col:nth-child(7) .custom-file-input,
+    .container .col:nth-child(8) .custom-file-input{
+        top: 15%;
+        width: 35%;
+        height: calc(100% - 40%);
+    }
+
+    .file-label-text{
+        position: relative;
+        font: 400 14px "Roboto", sans-serif;
+        top: 20%;
+    }
+
+    .botao{
+        width: 25%;
+    }
+}
