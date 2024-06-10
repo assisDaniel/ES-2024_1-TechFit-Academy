@@ -54,6 +54,10 @@ switch ($url[1]) {
         controller\HomeController::carregarTelaHome();
         break;
 
+        case "info":
+            controller\InfoController::carregarTelaInfo();
+            break;    
+
     case "api":
         if(isset($url[2])){
             if(is_numeric($url[2])){
