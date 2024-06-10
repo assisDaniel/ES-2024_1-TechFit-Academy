@@ -46,13 +46,13 @@ switch ($url[1]) {
             }
 
             if($url[2]== "info"){
-                controller\HomeController::carregarTelaInfo();
+                controller\InfoController::carregarTelaInfo();
                 break;
             }
 
         }
         controller\HomeController::carregarTelaHome();
-        break;
+        break;    
 
     case "api":
         if(isset($url[2])){
