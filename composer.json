@@ -5,8 +5,8 @@
         "psr-4": {
             "model\\": "src/Models",
             "view\\": "src/Views",
-            "controller\\": "src/Controllers"
-        }
+            "controller\\": "src/Controllers"         
+    }
     },
     "authors": [
         {

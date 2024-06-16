@@ -1,7 +1,11 @@
 <?php
 namespace model;
 
+use mysqli;
+
 class AdminModel{
+
+    public $rows;
 
     private function executarQuery($conexao, $query){
         $result= mysqli_query($conexao, $query);
@@ -32,4 +36,16 @@ class AdminModel{
             return false;
         }
     }
+
+        function obterTodosUsuarios($conexao) {
+            $usuarios = [];
+            $sql = "SELECT id, nome, cpf FROM usuario";
+            $result = $this->executarQuery($conexao, $sql);
+    
+            while ($row = mysqli_fetch_assoc($result)) {
+                $usuarios[] = $row;
+            }     
+            return $usuarios;
+        }      
 }
+

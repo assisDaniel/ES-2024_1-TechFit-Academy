@@ -1,20 +1,29 @@
 <?php
 namespace controller;
 
+use model\AdminModel;
+
 class AdminController extends Controller{
     private $data;
     private $avalPath;
-    private $fichaPath;
+    private $fichaPath;   
 
     public function __construct($data, $avalPath, $fichaPath){
         parent::__construct();
         $this->data = $data;
         $this->avalPath = $avalPath;
-        $this->fichaPath = $fichaPath;
+        $this->fichaPath = $fichaPath;     
     }
 
-    public static function carregarTelaAdmin(){
-        //...
+    public static function carregarTelaAdmin(){         
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        } 
+        $admindata = new AdminController(null, null, null);
+
+        $_SESSION['admindata'] = $admindata->adminModel->obterTodosUsuarios($admindata->conexao);
+
+        include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/AdminHome.php";
     }
 
     public static function carregarTelaAdminAdd(){
@@ -68,4 +77,5 @@ class AdminController extends Controller{
             header("Location: /admin/add");
         }
     }
+  
 }
