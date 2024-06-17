@@ -65,9 +65,25 @@ class AdminController extends Controller{
         }
     }
 
-    public static function actionDelete(){
-        //...
+    public static function actionDelete() {
+        if (isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $adminController = new AdminController(null, null, null);
+            $result = $adminController->delete($id);
+    
+            if ($result) {
+                header("Location: /admin");
+            } else {
+                header("Location: /admin?error=delete_failed");
+            }
+        } else {
+            header("Location: /admin");
+        }
     }
+
+    public function delete($id) {
+        return $this->adminModel->excluir($this->conexao, $id);
+    } 
 
     public function add(){
         $result= $this->adminModel->adicionar($this->conexao,$this->data, $this->avalPath, $this->fichaPath);
