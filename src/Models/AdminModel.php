@@ -46,6 +46,14 @@ class AdminModel{
                 $usuarios[] = $row;
             }     
             return $usuarios;
-        }      
+        }
+
+    function excluir($conexao, $id): bool {
+        $id = mysqli_escape_string($conexao, $id);
+        $sql = "DELETE FROM usuario WHERE id = '$id'";
+        $result = $this->executarQuery($conexao, $sql);
+    
+        return $result ? true : false;
+    }
 }
 
