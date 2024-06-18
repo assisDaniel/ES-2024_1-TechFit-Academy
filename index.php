@@ -76,6 +76,12 @@ switch ($url[1]) {
                 controller\AdminController::carregarTelaAdminAdd();
                 break;
             }else if($url[2] == "edit"){
+                if(isset($url[3])){
+                    if($url[3]=="process"){
+                        controller\AdminController::actionEdit();
+                        break;
+                    }
+                }
                 controller\AdminController::carregarTelaAdminEdit();
                 break;
             }else if($url[2] == "delete"){

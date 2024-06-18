@@ -16,6 +16,13 @@ class AdminModel{
         return $result;
     }
 
+    public function getUserById($conexao, $id) {
+        $sql = "SELECT * FROM usuario WHERE id = '$id'";
+        $result = $this->executarQuery($conexao, $sql);
+
+        return mysqli_fetch_assoc($result);
+    }
+
     function adicionar($conexao, $data, $avalPath, $fichaPath): bool{
         $nome= mysqli_escape_string($conexao, $data['nome']);
         $email= mysqli_escape_string($conexao, $data['email']);
@@ -55,5 +62,20 @@ class AdminModel{
     
         return $result ? true : false;
     }
+    
+    function editar($conexao, $id, $data, $avalPath, $fichaPath): bool{
+        $nome = mysqli_real_escape_string($conexao, $data['nome']);
+        $email = mysqli_real_escape_string($conexao, $data['email']);
+        $cpf = mysqli_real_escape_string($conexao, $data['cpf']);
+        $telefone = mysqli_real_escape_string($conexao, $data['telefone']);
+        $dtNascimento = mysqli_real_escape_string($conexao, $data['dtNascimento']);
+        $pdfAval = mysqli_real_escape_string($conexao, $avalPath);
+        $pdfFicha = mysqli_real_escape_string($conexao, $fichaPath);
+    
+        $sql = "UPDATE usuario SET nome='$nome', email='$email', cpf='$cpf', telefone='$telefone', dt_nascimento='$dtNascimento', pdf_avaliacao='$pdfAval', pdf_ficha='$pdfFicha' WHERE id='$id'";
+        $result = $this->executarQuery($conexao, $sql);
+        return $result ? true : false;
+    }
+    
 }
 
