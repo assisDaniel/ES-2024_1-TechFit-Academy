@@ -132,9 +132,29 @@ body{
 
 .container .col:nth-child(7),
 .container .col:nth-child(8),
-.container .col:nth-child(9) {
+.container .col:nth-child(9){
     grid-column: span 2;
     left: 2.5%;
+}
+
+.message{
+    font: 600 0.85rem/1.5 "Poppins", sans-serif;
+    text-align: center;
+    width: 150px;
+    height: 20px;
+    border-radius: 4px 4px 4px 4px;
+    background: indianred;
+    /*background: #cc0000;*/
+    /*color: #d8000c;*/
+    /*background: #ffbaba;*/
+}
+
+.alert{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
 }
 
 @media screen and (max-width: 430px){
