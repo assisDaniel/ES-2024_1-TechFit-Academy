@@ -23,6 +23,7 @@ O projeto "TechFit Academy" visa disponibilizar aos usuários acesso aos serviç
 - [2ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%232.md)
 - [3ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%233.md)
 - [4ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%234.md)
+- [5ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%235.md)
 
 ---
 ## 1ª Iteração - (03/04/2024 - 16/04/2024)
@@ -70,6 +71,18 @@ Objetivo da iteração: implementação das telas Index e Home, além de updates
 - Hotfix na Tela de Login. Autor: [Danilo Maciel](https://github.com/danmaciel23) Revisado por @httpablo
 - Implementação da Tela Index. Autor: [Tarciso Filho](https://github.com/tarcisof). Revisado por @danmaciel23
 - Implementação da Tela Home. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @tarcisof
+
+---
+## 5ª Iteração - (05/06/2024 - 18/06/2024)
+Para visualizar o planejamento mais detalhado: [CLIQUE AQUI](https://github.com/users/assisDaniel/projects/5)<br>
+Objetivo da iteração: implementação das features que compoem a parte do admin e criação de teste unitários.
+
+- Feature - Home do Admin. Autor: [Danilo Maciel](https://github.com/danmaciel23). Revisado por @httpablo.
+- Feature - Adicionar do Admin. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @danmaciel23
+- Feature - Editar do Admin. Autor: [Tarciso Filho](https://github.com/tarcisof). Revisado por @assisDaniel
+- Feature - Deletar do Admin. Autor: [Pablo Pereira](https://github.com/httpablo). Revisado por @tarcisof
+- Feature - Informações da Academia. Autor: [Pablo Pereira](https://github.com/httpablo). Revisado por @assisDaniel
+- Implementação de Testes Unitários. Autor: [Daniel Barbosa](https://github.com/assisDaniel). Revisado por @httpablo
 
 ---
 ### Definindo os requisitos funcionais do projeto:

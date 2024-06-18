@@ -58,4 +58,16 @@ class LoginModel{
         $row = mysqli_fetch_assoc($result);
         return $row['nome'];
     }
+
+    function isSuperUser($conexao, $id){
+        $sql = "select superuser from usuario where id= '$id'";
+        $result = $this->executarQuery($conexao, $sql);
+
+        if (mysqli_num_rows($result) == 0) return false;
+
+        $row = mysqli_fetch_assoc($result);
+
+        if($row['superuser'] == "1") return true;
+        return false;
+    }
 }

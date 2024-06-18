@@ -5,8 +5,8 @@
         "psr-4": {
             "model\\": "src/Models",
             "view\\": "src/Views",
-            "controller\\": "src/Controllers"
-        }
+            "controller\\": "src/Controllers"         
+    }
     },
     "authors": [
         {
@@ -16,5 +16,8 @@
     ],
     "require": {
         "ext-mysqli": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.2"
     }
 }

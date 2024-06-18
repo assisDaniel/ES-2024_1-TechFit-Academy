@@ -26,6 +26,11 @@ class LoginController extends Controller{
         if (isset($_POST['botaoLogin'])) {
             if (!empty($_POST['cpf']) && !empty($_POST['senha'])) {
                 $cpf = $_POST['cpf'];
+                if(!self::validarCPF($cpf)){
+                    $cpf= "** CPF inválido **";
+                    if(session_status() == PHP_SESSION_NONE) session_start();
+                    $_SESSION['erroCPF'] = $cpf;
+                }
                 $senha = $_POST['senha'];
 
                 $login = new LoginController($cpf, $senha);
@@ -53,6 +58,11 @@ class LoginController extends Controller{
             "senha" => $this->senha
         ];
 
+        if($data['cpf'] === "** CPF inválido **"){
+            header("Location: /login");
+            exit();
+        }
+
         $result = $this->loginModel->verificaLogin($this->conexao, $data);
 
         if ($result) {
@@ -64,7 +74,14 @@ class LoginController extends Controller{
                 "id"=> $this->loginModel->getId($this->conexao, $data['cpf']),
                 "nome"=> $this->loginModel->getNome($this->conexao, $data['cpf'])
             ]);
-            header("Location: /home");
+
+            if($this->loginModel->isSuperUser($this->conexao, $this->loginModel->getId($this->conexao, $data['cpf']))){
+                header("Location: /admin");
+                exit();
+            }else{
+                header("Location: /home");
+                exit();
+            }
         } else {
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
@@ -75,5 +92,34 @@ class LoginController extends Controller{
             ]);
             header("Location: /login");
         }
+    }
+
+    static function validarCPF($cpf) {
+        // Remove caracteres especiais
+        $cpf = preg_replace('/[^0-9]/', '', $cpf);
+
+        // Verifica se o CPF tem 11 dígitos
+        if (strlen($cpf) != 11) {
+            return false;
+        }
+
+        // Elimina CPFs inválidos conhecidos
+        if (preg_match('/(\d)\1{10}/', $cpf)) {
+            return false;
+        }
+
+        // Calcula os dígitos verificadores
+        for ($t = 9; $t < 11; $t++) {
+            $d = 0;
+            for ($c = 0; $c < $t; $c++) {
+                $d += $cpf[$c] * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf[$c] != $d) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

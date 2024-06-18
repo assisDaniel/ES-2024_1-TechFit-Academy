@@ -1,0 +1,107 @@
+body {
+  background: #f9f8f6;
+}
+
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 70px;
+  gap: 10px;
+  font: 600 1.125rem/1 "Poppins", sans-serif;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 300px;
+  margin-top: 35px;
+  margin-left: 130px;
+  margin-bottom: 35px;
+}
+
+.sub-titulo {
+  font: 500 1.25rem/1 "Roboto", sans-serif;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.horarios {
+  background: #ffffff;
+  border-radius: 5px;
+  width: 400px;
+  height: 180px;
+}
+
+.horarios p,
+.horarios span {
+  font: 400 1rem/1 "Roboto", sans-serif;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.contato {
+  margin-left: 130px;
+}
+
+.contato p {
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.whatsapp {
+  font: 500 1.125rem/1 "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    gap: 10px;
+  }
+
+  .horarios {
+    width: 100%;
+    height: auto;
+  }
+
+  .contato {
+    margin: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    margin: 10px;
+    margin-left: 40px;
+    gap: 10px;
+  }
+
+  .header {
+    margin: 10px;
+  }
+
+  .horarios {
+    width: 80%;
+    height: auto;
+  }
+
+  .contato {
+    margin-left: 40px;
+  }
+  .contato p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+}

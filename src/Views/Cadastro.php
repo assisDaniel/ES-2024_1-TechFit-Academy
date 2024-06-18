@@ -32,15 +32,15 @@
       </div>
       <div>
         <label for='cpf'>CPF</label>
-        <input type='text' id='cpf' name='cpf' required>
+        <input type='text' id='cpf' name='cpf' placeholder="000.000.000-00" oninput="formatarCPF(this)" required>
       </div>
       <div>
         <label for='senha'>Senha</label>
-        <input type='password' id='senha' name='senha' required>
+        <input type='password' id='senha' name='senha' placeholder="Máximo de 30 caracteres" required>
       </div>
       <div>
         <label for='contato'>Contato</label>
-        <input type='text' id='contato' name='contato' required>
+        <input type='text' id='contato' name='contato' placeholder="(00) 00000-0000" oninput="formatarTelefone(this)" required>
       </div>
       <div>
         <label for='data_nascimento'>Data de Nascimento</label>
@@ -50,6 +50,63 @@
       <p>Já tem uma conta? <a href='/login'>Fazer Login</a></p>
     </form>
   </main>
+    <div class="alert">
+        <?php
+            if(isset($_SESSION['erroCPF'])){
+                echo '<p class="message">' . $_SESSION['erroCPF'] . '</p>';
+                unset($_SESSION['erroCPF']);
+            }
+        ?>
+    </div>
+    <br>
+  <div class="alert">
+      <?php
+      if(isset($_SESSION['erroTel'])){
+          echo '<p class="message">' . $_SESSION['erroTel'] . '</p>';
+          unset($_SESSION['erroTel']);
+      }
+      ?>
+  </div>
+
+  <script>
+      function formatarCPF(campo) {
+          let cpf = campo.value.replace(/\D/g, '');
+          if (cpf.length > 11) cpf = cpf.substr(0, 11);
+
+          campo.value = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/,
+              function(regex, part1, part2, part3, part4) {
+                  let formattedCPF = part1 + '.' + part2 + '.' + part3;
+                  if (part4) formattedCPF += '-' + part4;
+                  return formattedCPF;
+              }
+          );
+      }
+
+      function formatarTelefone(campo) {
+          // Remove todos os caracteres não numéricos, exceto o '+' inicial para internacional
+          let telefone = campo.value.replace(/(?!^\+)\D/g, '');
+
+          // Remove o prefixo "+55" para formatação, se presente
+          let hasPrefix = telefone.startsWith("+55");
+          if (hasPrefix) {
+              telefone = telefone.substring(3);
+          }
+
+          // Limita a 10 ou 11 dígitos para número nacional com DDD
+          telefone = telefone.substr(0, 11);
+
+          // Adiciona formatação dependendo do comprimento do telefone
+          let formattedPhone = telefone.replace(/^(\d{2})(\d{4,5})(\d{0,4})/,
+              function(regex, part1, part2, part3) {
+                  let formatted = '(' + part1 + ') ' + part2;
+                  if (part3) formatted += '-' + part3;
+                  return formatted;
+              }
+          );
+
+          campo.value= formattedPhone;
+      }
+  </script>
 </body>
 
 </html>
