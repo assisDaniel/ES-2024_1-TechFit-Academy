@@ -80,8 +80,10 @@ class CadastroController extends Controller
 
         if($this->resultadoCadastro){
             header("Location: /login");
+            return true;
         }else{
             header("Location: /cadastro");
+            return false;
         }
     }
 
