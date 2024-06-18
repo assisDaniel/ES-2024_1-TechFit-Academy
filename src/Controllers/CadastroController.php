@@ -80,8 +80,10 @@ class CadastroController extends Controller
 
         if($this->resultadoCadastro){
             header("Location: /login");
+            return true;
         }else{
             header("Location: /cadastro");
+            return false;
         }
     }
 
@@ -115,7 +117,7 @@ class CadastroController extends Controller
     }
 
 
-    static function validarTelefone($numero)
+    static function validarTelefone($numero): bool
     {
         // Regex para número de telefone no formato brasileiro
         $regex = '/^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$/';
