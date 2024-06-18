@@ -74,7 +74,14 @@ class LoginController extends Controller{
                 "id"=> $this->loginModel->getId($this->conexao, $data['cpf']),
                 "nome"=> $this->loginModel->getNome($this->conexao, $data['cpf'])
             ]);
-            header("Location: /home");
+
+            if($this->loginModel->isSuperUser($this->conexao, $this->loginModel->getId($this->conexao, $data['cpf']))){
+                header("Location: /admin");
+                exit();
+            }else{
+                header("Location: /home");
+                exit();
+            }
         } else {
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();

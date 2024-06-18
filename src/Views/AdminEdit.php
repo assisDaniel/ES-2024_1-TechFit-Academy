@@ -22,12 +22,7 @@
 
         <p>
             <?php
-            if (session_status() == PHP_SESSION_NONE) {
-                session_start();
-            }
-
-            $getter = json_decode($_SESSION['userData'], true);
-            echo $getter['nome'];
+            echo "Admin";
 
             $idk3 =  $_SESSION['idk']; 
             ?>

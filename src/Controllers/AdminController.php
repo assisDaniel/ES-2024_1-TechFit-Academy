@@ -13,10 +13,25 @@ class AdminController extends Controller{
         $this->fichaPath = $fichaPath;     
     }
 
-    public static function carregarTelaAdmin(){         
-        if(session_status() == PHP_SESSION_NONE){
+    public static function carregarTelaAdmin(){
+        if(session_status() == PHP_SESSION_DISABLED){
+            header("Location: /login");
+            exit();
+        }
+
+        if(session_status()==PHP_SESSION_NONE){
             session_start();
-        } 
+        }
+
+        $getter= json_decode($_SESSION['loginData'], true);
+        $id= $getter['id'];
+        $nome= $getter['nome'];
+
+        if(!isset($id)){
+            header("Location: /login");
+            exit();
+        }
+
         $admindata = new AdminController(null, null, null);
 
         $_SESSION['admindata'] = $admindata->adminModel->obterTodosUsuarios($admindata->conexao);
@@ -25,6 +40,24 @@ class AdminController extends Controller{
     }
 
     public static function carregarTelaAdminAdd(){
+        if(session_status() == PHP_SESSION_DISABLED){
+            header("Location: /login");
+            exit();
+        }
+
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
+
+        $getter= json_decode($_SESSION['loginData'], true);
+        $id= $getter['id'];
+        $nome= $getter['nome'];
+
+        if(!isset($id)){
+            header("Location: /login");
+            exit();
+        }
+
         include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/AdminAdd.php";
     }
 

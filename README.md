@@ -23,6 +23,7 @@ O projeto "TechFit Academy" visa disponibilizar aos usuários acesso aos serviç
 - [2ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%232.md)
 - [3ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%233.md)
 - [4ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%234.md)
+- [5ª Iteração](Relatorios%20de%20Gestao/Relatórios%20de%20Gestão%20-%20Iteração%20%235.md)
 
 ---
 ## 1ª Iteração - (03/04/2024 - 16/04/2024)
