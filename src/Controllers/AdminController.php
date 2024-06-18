@@ -54,6 +54,12 @@ class AdminController extends Controller{
                 "dtNascimento"=> $_POST['dtNascimento']
             ];
 
+            if(!self::validarCPF($data['cpf'])){
+                $data['cpf']= "** CPF inválido **";
+                if(session_status() == PHP_SESSION_NONE) session_start();
+                $_SESSION['erroCPF']= $data['cpf'];
+            }
+
             $avaFileName= $data['cpf']." - ".$_FILES["aval"]["name"]; // nome do arquivo com cpf para que não haja sobrescrição
             $tempname= $_FILES["aval"]["tmp_name"]; //nome temporário para guardar o arquivo
             $avaUploadDir= 'src/pdf-files/avaliacao/'; //diretório de upload
@@ -95,6 +101,11 @@ class AdminController extends Controller{
     } 
 
     public function add(){
+        if($this->data['cpf'] === "** CPF inválido **"){
+            header("Location: /admin/add");
+            exit();
+        }
+
         $result= $this->adminModel->adicionar($this->conexao,$this->data, $this->avalPath, $this->fichaPath);
         if($result){
             header("Location: /admin");
@@ -144,4 +155,41 @@ class AdminController extends Controller{
         }
     }
 
+    static function validarCPF($cpf) {
+        // Remove caracteres especiais
+        $cpf = preg_replace('/[^0-9]/', '', $cpf);
+
+        // Verifica se o CPF tem 11 dígitos
+        if (strlen($cpf) != 11) {
+            return false;
+        }
+
+        // Elimina CPFs inválidos conhecidos
+        if (preg_match('/(\d)\1{10}/', $cpf)) {
+            return false;
+        }
+
+        // Calcula os dígitos verificadores
+        for ($t = 9; $t < 11; $t++) {
+            $d = 0;
+            for ($c = 0; $c < $t; $c++) {
+                $d += $cpf[$c] * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf[$c] != $d) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+    static function validarTelefone($numero)
+    {
+        // Regex para número de telefone no formato brasileiro
+        $regex = '/^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$/';
+
+        return preg_match($regex, $numero);
+    }
 }

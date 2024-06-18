@@ -52,7 +52,7 @@
 
             <div class="col">
                 <label class="form-label">CPF</label>
-                <input type="text" name="cpf" class="form-input" value="<?php echo $idk3['cpf']?>">
+                <input type="text" name="cpf" class="form-input" value="<?php echo $idk3['cpf']?>" oninput="formatarCPF(this)">
             </div>
 
             <div class="col">
@@ -87,6 +87,14 @@
             <div class="col">
                 <button type="submit" class="botao" name="botaoAdminEdit">Editar</button>
             </div>
+            <div class="alert">
+                <?php
+                if(isset($_SESSION['erroCPF'])){
+                    echo '<p class="message">' . $_SESSION['erroCPF'] . '</p>';
+                    unset($_SESSION['erroCPF']);
+                }
+                ?>
+            </div>
         </div>
     </form>
 
@@ -102,6 +110,19 @@
             let label = this.nextElementSibling.querySelector('.file-label-text');
             label.textContent = fileName;
         });
+
+        function formatarCPF(campo) {
+            let cpf = campo.value.replace(/\D/g, '');
+            if (cpf.length > 11) cpf = cpf.substr(0, 11);
+
+            campo.value = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/,
+                function(regex, part1, part2, part3, part4) {
+                    let formattedCPF = part1 + '.' + part2 + '.' + part3;
+                    if (part4) formattedCPF += '-' + part4;
+                    return formattedCPF;
+                }
+            );
+        }
     </script>
 </body>
 </html>
