@@ -73,8 +73,14 @@
                             <td id="nome"><?php echo htmlspecialchars($usuario['nome']); ?></td> 
                             <td id="cpf"><?php echo htmlspecialchars($usuario['cpf']); ?></td> 
                             <td id="opcoes">
-                            <a href="AdminEdit.php?id=<?php echo $usuario['id']; ?>"><img src="/src/Views/static/icons/pen.svg" width="25px"></a>
+                            <!--<a href="AdminEdit.php?id=<?php echo $usuario['id']; ?>"><img src="/src/Views/static/icons/pen.svg" width="25px"></a>-->
                             <!-- <a href="AdminDelete.php?id=<?php echo $usuario['id']; ?>"><img src="/src/Views/static/icons/lixo.svg" width="25px"></a> -->
+                            <form action="/admin/edit" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>">
+                                <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+                                    <img src="/src/Views/static/icons/pen.svg" width="25px">
+                                </button>
+                            </form>
                             <form action="/admin/delete" method="post" style="display:inline;">
                                 <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>">
                                 <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">

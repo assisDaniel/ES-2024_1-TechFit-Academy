@@ -1,8 +1,6 @@
 <?php
 namespace controller;
 
-use model\AdminModel;
-
 class AdminController extends Controller{
     private $data;
     private $avalPath;
@@ -31,7 +29,18 @@ class AdminController extends Controller{
     }
 
     public static function carregarTelaAdminEdit(){
-        //...
+        if(session_status() == PHP_SESSION_NONE) session_start();
+        $_SESSION['idEdit'] = $_POST['id'];
+        $_SESSION['idk'] = self::getUser($_POST['id']);
+        include $_SERVER['DOCUMENT_ROOT'] . "/src/Views/AdminEdit.php";
+    }
+    
+    public static function getUser($id){
+        $idk = new self(null, null, null);
+        $idk2 = [];
+        $idk2 = $idk->adminModel->getUserById($idk->conexao, $id);
+
+        return $idk2;
     }
 
     public static function actionAdd(){
@@ -93,5 +102,46 @@ class AdminController extends Controller{
             header("Location: /admin/add");
         }
     }
-  
+    public static function actionEdit(){
+        if(isset($_POST['botaoAdminEdit'])){
+            if(session_status() == PHP_SESSION_NONE) session_start();
+            $data= [
+                "id" => $_SESSION['idEdit'],
+                "nome"=> $_POST['nome'],
+                "email"=> $_POST['email'],
+                "cpf"=> $_POST['cpf'],
+                "telefone"=> $_POST['telefone'],
+                "dtNascimento"=> $_POST['dtNascimento']
+            ];
+
+            $avaFileName= $data['cpf']." - ".$_FILES["aval"]["name"]; // nome do arquivo com cpf para que não haja sobrescrição
+            $tempname= $_FILES["aval"]["tmp_name"]; //nome temporário para guardar o arquivo
+            $avaUploadDir= 'src/pdf-files/avaliacao/'; //diretório de upload
+            $avaCompleteDir= $avaUploadDir.$avaFileName;
+            move_uploaded_file($tempname, $avaCompleteDir); //mover o arquivo upado para um local específico
+
+            $fichaFileName= $data['cpf']." - ".$_FILES["ficha"]["name"]; // nome do arquivo com cpf para que não haja sobrescrição
+            $tempname= $_FILES["ficha"]["tmp_name"]; //nome temporário para guardar o arquivo
+            $fichaUploadDir= 'src/pdf-files/ficha/'; //diretório de upload
+            $fichaCompleteDir= $fichaUploadDir.$fichaFileName;
+            move_uploaded_file($tempname, $fichaCompleteDir);
+
+            $action= new AdminController($data, $avaCompleteDir, $fichaCompleteDir);
+            $action->edit();
+
+        }else{
+            header("Location: /admin");
+        }
+    }
+
+    public function edit(){
+        $id = $this->data['id'];
+        $result= $this->adminModel->editar($this->conexao,$id, $this->data, $this->avalPath, $this->fichaPath);
+        if($result){
+            header("Location: /admin");
+        }else{
+            header("Location: /admin/edit");
+        }
+    }
+
 }
