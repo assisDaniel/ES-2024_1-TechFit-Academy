@@ -74,7 +74,7 @@
                                     <img src="/src/Views/static/icons/pen.svg" width="25px">
                                 </button>
                             </form>
-                            <form action="/admin/delete" method="post" style="display:inline;">
+                            <form action="/admin/delete" method="post" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir este usuário?');">
                                 <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>">
                                 <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
                                     <img src="/src/Views/static/icons/lixo.svg" width="25px">
