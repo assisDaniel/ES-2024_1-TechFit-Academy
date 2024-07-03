@@ -21,13 +21,15 @@ class ApiController extends Controller{
 
         $getter= json_decode($_SESSION['loginData'], true);
         $id= $getter['id'];
+        $isSuperUser= (new ApiController(null))->checkSuper($id);
+        $_SESSION['superUser']= $isSuperUser;
 
         if(!isset($id)){
             header("Location: /login");
             exit();
         }
 
-        if(isset($_SESSION['userData'])){
+        if(isset($_SESSION['superUser'])){
             $data=[];
 
             $api= new ApiController($data);
@@ -62,5 +64,9 @@ class ApiController extends Controller{
         $_SESSION['api']= json_encode($api->data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT);
 
         include $_SERVER['DOCUMENT_ROOT'].'/src/Views/Api.php';
+    }
+
+    function checkSuper($id){
+        return $this->apiModel->isSuperUser($this->conexao, $id);
     }
 }

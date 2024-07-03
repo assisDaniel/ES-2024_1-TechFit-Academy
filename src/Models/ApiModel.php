@@ -25,15 +25,15 @@ class ApiModel{
             $data[] = $row;
         }
 
-        $getter= json_decode($_SESSION['userData'], true);
-        if($getter['isSuperUser']){
+        $superUser= $_SESSION['superUser'];
+        if($superUser){
             return $data;
+        }else{
+            return [
+                "Status"=> 404,
+                "Message"=>"Usuário sem permissão de acesso!"
+            ];
         }
-
-        return [
-            "Status"=> 404,
-            "Message"=>"Usuário sem permissão de acesso!"
-        ];
     }
 
     function getUser($conexao, $id){
@@ -44,8 +44,8 @@ class ApiModel{
             session_start();
         }
 
-        $getter= json_decode($_SESSION['userData'], true);
-        if($getter['isSuperUser']){
+        $superUser= $_SESSION['superUser'];
+        if($superUser){
             if(mysqli_num_rows($result) == 0){
                 return [
                     "Status"=> "404",
@@ -61,5 +61,17 @@ class ApiModel{
             ];
         }
 
+    }
+
+    function isSuperUser($conexao, $id){
+        $sql = "select superuser from usuario where id= '$id'";
+        $result = $this->executarQuery($conexao, $sql);
+
+        if (mysqli_num_rows($result) == 0) return false;
+
+        $row = mysqli_fetch_assoc($result);
+
+        if($row['superuser'] == "1") return true;
+        return false;
     }
 }
